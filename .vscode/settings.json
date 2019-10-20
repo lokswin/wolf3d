@@ -1,5 +1,18 @@
 {
     "files.associations": {
-        "wolf3d.h": "c"
-    }
+        "wolf3d.h": "c",
+        "math.h": "c",
+        "vulkan.h": "c",
+        "vulkan_macos.h": "c",
+        "pthread.h": "c",
+        "fcntl.h": "c",
+        "time.h": "c",
+        "cassert": "cpp",
+        "array": "c",
+        "string_view": "c",
+        "iterator": "c",
+        "string": "c",
+        "vector": "c"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }
