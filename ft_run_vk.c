@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/20 20:56:17 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/21 17:00:27 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ static void					ft_init_app_info(VkApplicationInfo *app_info)
 
 /*
 ** **************************************************************************
-**	static void ft_init_inst_info(VkInstanceCreateInfo *inst_info, VkApplicationInfo *app_info)
+**	static void ft_init_inst_info(VkInstanceCreateInfo *inst_info, \
+**	VkApplicationInfo *app_info)
 **	Function to initialise struct inst_info
 ** **************************************************************************
 */

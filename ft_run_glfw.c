@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/20 21:44:56 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/21 20:35:46 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /*
 ** **************************************************************************
-**	static GLFWwindow *ft_initwindow()
+**	static GLFWwindow *ft_init_win()
 **	Function to initialise window vulkan
 ** **************************************************************************
 */
 
-static GLFWwindow		*ft_initwindow()
+static GLFWwindow		*ft_init_win()
 {
 	GLFWwindow	*new_w;
 
@@ -31,18 +31,20 @@ static GLFWwindow		*ft_initwindow()
 
 /*
 ** **************************************************************************
-**	VkInstance *ft_initvulkan()
+**	VkInstance *ft_init_vk()
 **	Function to initialise vulkan
 ** **************************************************************************
 */
 
-VkInstance		*ft_initvulkan()
+VkInstance		*ft_init_vk()
 {
-	VkInstance	*inst;
-
+	VkInstance			*inst;
+	VkPhysicalDevice	pd;
 	inst = ft_run_vk();
 	//setupDebugCallback();
-	pickphysicaldevice(inst);
+	pd = *ft_pick_pd(*inst);
+	ft_create_ld(pd);
+	ft_find_queue_f_i(pd);
 	return(inst);
 }
 
@@ -88,8 +90,8 @@ void			ft_run_glfw()
 	GLFWwindow	*glfw_w;
 	VkInstance	*inst;
 
-	glfw_w = ft_initwindow();
-	inst = ft_initvulkan();
+	glfw_w = ft_init_win();
+	inst = ft_init_vk();
 	ft_mainloop(glfw_w);
 	ft_cleanup(glfw_w, inst);
 }

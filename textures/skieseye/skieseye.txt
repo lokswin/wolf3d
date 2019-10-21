@@ -1,0 +1,87 @@
+===========================================================================
+Archive Maintainer      : ../idgames/graphics/skieseye.zip
+Update to               : -
+Advanced engine needed  : N/A (compatible with "MAPINFO" lump
+						  recommended, though)
+
+Primary purpose         : New graphics (skies) for use in custom Doom
+						  maps.
+						  
+===========================================================================
+Title                   : Beautiful Strange Doom Sky Pack
+Release date            : 19/05/2007
+Author                  : Eye del Cul
+Email Address           : eyedecul@gmail.com
+Website					: http://www.arcades3d.com
+
+Other Files By Author   : Many... A Doom 2 episode -garrulo.wad-. A Doom
+						  level pack -niveles.wad-. Some scattered maps
+						  -hachisch.wad, desert2.wad, mrgris.wad, etc-.
+
+Misc. Author Info       : Hmm... Spanish guy. Sorry for this bad english.
+
+Description             : A set of ten new skies for Doom. All of them
+						  1024 pixels wide, divided in four pieces.
+						  
+						  The WAD archive contains a small demo map (re-
+						  peated ten times, each one with a different sky),
+						  so you can view how the skies can be applied in
+						  the game.
+						  
+						  There are also three folders. The named "truecolor"
+						  includes the original renders (256x192, 24 bpp). In
+						  "8bits-doom" you'll find the same graphics converted
+						  to Doom palette. And "8bits-128px-doom" contains the
+						  128 pixel tall skies that I used in the demo WAD.
+						  
+						  I tried to create certain variety of atmospheres. So
+						  there are some earth-like skies, an "inferno" sky, a
+						  moon-space one, a Mars inspired sky..., among others.
+
+===========================================================================
+
+* What is included *
+
+New levels              : One demo level
+Sounds                  : No
+Music                   : No
+Graphics                : Yes
+Dehacked/BEX Patch      : No
+Demos                   : No
+Other                   : No
+Other files required    : If you want to run the WAD, Zdoom or other "MAPINFO"
+						  compatible port.
+
+
+* Play Information *
+
+Game                    : Doom or Doom II
+Map #                   : MAP01-MAP10 for demo purposes... All are the same.
+Single Player           : Only to look around
+Cooperative 2-4 Player  : No
+Deathmatch 2-4 Player   : No
+Other game styles       : No
+Difficulty Settings     : No
+
+
+* Construction *
+
+Base                    : From scratch
+Build Time              : A week
+Editor(s) used          : Terragen, World Machine, The GIMP, XWE
+Known Bugs              : None...
+
+
+===========================================================================
+* Copyright / Permissions *
+
+Authors MAY use the contents of this file as a base for modification or reuse.
+Authors MAY copy the contents and redistribute it. Authors MAY, basically, do
+whatever they want. But give credit, please.
+
+
+* Where to get the file that this text file describes *
+
+Probably:
+  ftp://archives.3dgamers.com/pub/idgames/graphics/skieseye.zip
+and mirrors

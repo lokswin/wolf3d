@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/20 21:44:21 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/21 20:36:30 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,17 @@ typedef struct		s_w
 	void			*img_p;
 }					t_w;
 
+typedef struct		s_queue_f_i
+{
+	uint32_t		graphic_family;
+		
+}					t_queue_f_i;
+
 void				ft_run_glfw();
 VkInstance			*ft_run_vk();
-void				pickphysicaldevice(VkInstance *inst);
+VkPhysicalDevice	*ft_pick_pd(VkInstance inst);
+void				ft_create_ld(VkPhysicalDevice pd);
+t_queue_f_i			*ft_find_queue_f_i(VkPhysicalDevice pd);
 
 /*
 include path
