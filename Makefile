@@ -6,7 +6,7 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/20 21:37:42 by drafe            ###   ########.fr        #
+#    Updated: 2019/10/22 18:07:29 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ LIBS = -L./Libft/ -lft\
 OBJS = main.o\
 	ft_run_glfw.o\
 	ft_run_vk.o\
-	ft_run_pd.o
+	ft_run_pd.o\
+	ft_map.o
 
 all: $(NAME)
 

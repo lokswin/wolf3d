@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/21 20:36:30 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/22 20:28:17 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,23 @@
 # define APP_SHORT_NAME "vulkansamples_instance"
 # define W 800
 # define H 800
+# define MAX_MAP_H 50
+# define MAX_MAP_W 50
 # define GLM_FORCE_RADIANS
 # define GLM_FORCE_DEPTH_ZERO_TO_ONE
+
+
+/*
+** **************************************************************************
+**	typedef struct s_map
+**	Structure for store map
+** **************************************************************************
+*/
+
+typedef struct		s_map
+{
+	int				size;
+}					t_map;
 
 /*
 ** **************************************************************************
@@ -43,6 +58,7 @@
 typedef struct		s_w
 {
 	pthread_mutex_t lock_x;
+	t_map			map;
 	char			*img;
 	int				threads;
 	int				ln_sz;
@@ -60,10 +76,16 @@ typedef struct		s_queue_f_i
 }					t_queue_f_i;
 
 void				ft_run_glfw();
+
 VkInstance			*ft_run_vk();
 VkPhysicalDevice	*ft_pick_pd(VkInstance inst);
+
 void				ft_create_ld(VkPhysicalDevice pd);
+
 t_queue_f_i			*ft_find_queue_f_i(VkPhysicalDevice pd);
+
+int					ft_map_chk(int fd, t_w *w);
+void				ft_put_map_man();
 
 /*
 include path
