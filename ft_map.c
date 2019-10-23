@@ -6,11 +6,23 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/22 21:23:04 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/23 14:11:48 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
+/*
+** **************************************************************************
+**	static void ft_map_chk_p2(int len, char *line)
+**	Second function to check user map
+** **************************************************************************
+*/
+
+static void		ft_map_chk_exp(int len, char *line)
+{
+	line += 0;
+	len += 0;
+}
 
 /*
 ** **************************************************************************
@@ -28,7 +40,7 @@ static void		ft_map_save(int len, char *line, t_map *map)
 /*
 ** **************************************************************************
 **	int ft_map_chk(int fd, t_w *new_w)
-**	Function to check user map
+**	First function to check user map
 ** **************************************************************************
 */
 
@@ -44,20 +56,19 @@ int					ft_map_chk(int fd, t_w *w)
 	{
 		res = ft_get_next_line(fd, &line);
 		if (res == -1)
-		{
 			ft_putstr_fd("GNL error. ", 2);
-			return (0);
-		}
-		else if (res == 0)
+		if (res == 0)
 			break ;
-		else if (i > MAX_MAP_H)
+		if (i > MAX_MAP_H)
 			return (0);
-		if ((res = ft_strlen(line)) && (res > MAX_MAP_W))
+		if ((res = ft_strlen(line)) || (res > MAX_MAP_W) || \
+		(res < MIN_MAP_W) || (i > MAX_MAP_H))
 			return (0);
 		ft_map_save(res, line, &w->map);
 		ft_strdel(&line);
 		i++;
 	}
+	ft_map_chk_exp(i, line);
 	return(1);
 }
 

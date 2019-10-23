@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/22 20:28:17 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/23 13:53:17 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WOLF3D_H
 # include "./libft/libft.h"
 # include "keys.h"
+# include "constants.h"
 # include "mlx.h"
 
 # include <stdio.h>//printf remove before push
@@ -27,14 +28,6 @@
 # include <cglm/call.h>
 # include <cglm/vec4.h>
 # include <cglm/mat4.h>
-# define APP_SHORT_NAME "vulkansamples_instance"
-# define W 800
-# define H 800
-# define MAX_MAP_H 50
-# define MAX_MAP_W 50
-# define GLM_FORCE_RADIANS
-# define GLM_FORCE_DEPTH_ZERO_TO_ONE
-
 
 /*
 ** **************************************************************************
