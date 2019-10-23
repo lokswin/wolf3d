@@ -12,7 +12,8 @@
         "string_view": "c",
         "iterator": "c",
         "string": "c",
-        "vector": "c"
+        "vector": "c",
+        "ios": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

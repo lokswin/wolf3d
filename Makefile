@@ -6,7 +6,7 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/22 18:07:29 by drafe            ###   ########.fr        #
+#    Updated: 2019/10/23 15:32:24 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ CFLAGS = -Wall -Wextra -Werror -g -m64
 NAME = wolf3d
 
 HEADERS = wolf3d.h\
-	keys.h
+	keys.h\
+	constants.h
 
 INCLUDES = -I/Users/drafe/.brew/Cellar/cglm/0.6.0/include\
 	-I/Users/drafe/.brew/Cellar/glfw/3.3/include
