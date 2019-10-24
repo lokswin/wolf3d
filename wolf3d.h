@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/23 13:53:17 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/24 21:25:24 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # include <cglm/call.h>
 # include <cglm/vec4.h>
 # include <cglm/mat4.h>
+# define deg_to_rad(degs) ((degs) * M_PI / 180.0)
+# define rad_to_deg(rads) ((rads) * 180.0 / M_PI)
 
 /*
 ** **************************************************************************
@@ -79,6 +81,8 @@ t_queue_f_i			*ft_find_queue_f_i(VkPhysicalDevice pd);
 
 int					ft_map_chk(int fd, t_w *w);
 void				ft_put_map_man();
+
+void				ft_draw(t_w *w);
 
 /*
 include path

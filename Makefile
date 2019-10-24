@@ -6,7 +6,7 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/23 15:32:24 by drafe            ###   ########.fr        #
+#    Updated: 2019/10/24 19:10:18 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ OBJS = main.o\
 	ft_run_glfw.o\
 	ft_run_vk.o\
 	ft_run_pd.o\
-	ft_map.o
+	ft_map.o\
+	ft_draw.o
 
 all: $(NAME)
 
