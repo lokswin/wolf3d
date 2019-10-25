@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/25 18:21:39 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/25 18:24:52 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct		s_w
 {
 	pthread_mutex_t lock_x;
 	t_map			map;
+	SDL_Window		*sdl_win;
 	char			*img;
 	int				threads;
 	int				ln_sz;
