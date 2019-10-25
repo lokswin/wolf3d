@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/24 19:24:39 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/25 18:20:45 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ static int					ft_open(char *source_f)
 
 int							main(int argc, char **argv)
 {
-	clock_t		t;
-	double		time_taken;
-	t_w			new_w;
-	int			fd;
+	clock_t			t;
+	double			time_taken;
+	t_w				new_w;
+	int				fd;
 
 	t = clock();
 	if ((argc != 2) || (argv[1] == NULL))
@@ -78,8 +78,6 @@ int							main(int argc, char **argv)
 	ft_read(fd, &new_w);
 	ft_draw(&new_w);
 	printf("after read mapsize:%d\n", new_w.map.size);
-	ft_run_glfw();
-	
 	t = clock() - t;
 	time_taken = (double)t / CLOCKS_PER_SEC;
 	printf("\ntime_taken = %f\n", time_taken);

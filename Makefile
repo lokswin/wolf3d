@@ -6,15 +6,15 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/24 19:10:18 by drafe            ###   ########.fr        #
+#    Updated: 2019/10/25 18:15:05 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#vulkansdk/macOS/lib. vulkan-headers 1.1.125
+
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g -m64
+CFLAGS = -Wall -Wextra -Werror -g # -m64 -D_THREAD_SAFE
 
 NAME = wolf3d
 
@@ -22,20 +22,14 @@ HEADERS = wolf3d.h\
 	keys.h\
 	constants.h
 
-INCLUDES = -I/Users/drafe/.brew/Cellar/cglm/0.6.0/include\
-	-I/Users/drafe/.brew/Cellar/glfw/3.3/include
-	
+INCLUDES = -I include
 
 LIBS = -L./Libft/ -lft\
-	-lmlx -framework OpenGL -framework AppKit -lvulkan\
-	-L/Users/drafe/.brew/Cellar/cglm/0.6.0/lib -lcglm -lm\
-	-L/Users/drafe/.brew/Cellar/glfw/3.3/lib -lglfw
+	-L./sdl2lib -l SDL2-2.0.0 -framework Metal
 
 OBJS = main.o\
-	ft_run_glfw.o\
-	ft_run_vk.o\
-	ft_run_pd.o\
 	ft_map.o\
+	ft_sdl_run.o\
 	ft_draw.o
 
 all: $(NAME)
@@ -44,7 +38,7 @@ $(NAME):$(OBJS) | lib
 	$(CC) $(CFLAGS) $(INCLUDES) $(LIBS) -o $(NAME) $(OBJS) 
 
 %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $< 
 lib:
 	@make -f Makefile.libft
 
