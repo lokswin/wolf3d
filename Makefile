@@ -6,7 +6,7 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/25 18:15:05 by drafe            ###   ########.fr        #
+#    Updated: 2019/10/26 18:25:21 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g # -m64 -D_THREAD_SAFE
+CFLAGS = -Wall -Wextra -Werror -g# --std=c99 -m64 -D_THREAD_SAFE
 
 NAME = wolf3d
 
@@ -24,8 +24,14 @@ HEADERS = wolf3d.h\
 
 INCLUDES = -I include
 
+GO = $(shell pkg-config --libs --cflags ./sdl2lib/pkgconfig/sdl2.pc)
+
 LIBS = -L./Libft/ -lft\
-	-L./sdl2lib -l SDL2-2.0.0 -framework Metal
+	-lSDL2 -lm
+	#-L./sdl2lib -l SDL2-2.0.0\
+	#-framework OpenGL -framework AppKit# -framework cocoa -framework Metal -framework OpenGL -framework AppKit
+
+#FRAMEWORKS = -F . -framework cocoa -framework Metal -framework OpenGL -framework AppKit
 
 OBJS = main.o\
 	ft_map.o\
@@ -35,10 +41,11 @@ OBJS = main.o\
 all: $(NAME)
 
 $(NAME):$(OBJS) | lib
-	$(CC) $(CFLAGS) $(INCLUDES) $(LIBS) -o $(NAME) $(OBJS) 
+	
+	$(CC) $(GO) $(CFLAGS) $(INCLUDES) $(LIBS) -o $(NAME) $(OBJS) 
 
 %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $< 
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
 lib:
 	@make -f Makefile.libft
 

@@ -1,5 +1,5 @@
 echo "Start install library.";
-sh ./inst.sh;
+#sh ./inst.sh;
 echo "...under construct...";
 echo "Install library done.";
 echo "Start Makefile to compile project.";

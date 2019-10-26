@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/24 21:23:43 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/26 18:57:49 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ void					ft_draw(t_w *w)
 	i = 0;
 	ray = 0;
 	fov = 60; 
-	ray_angle = deg_to_rad((fov / W));
+	ray_angle = deg_to_rad((fov / W_WIN));
 	//dimension = W * H;
 	//cam_mid = W / 2 , H / 2;
-	dist_to_cam = (W / 2) / (tan(deg_to_rad(30)));
-	while (i > W)
+	dist_to_cam = (W_WIN / 2) / (tan(deg_to_rad(30)));
+	while (i > W_WIN)
 	{
 		ft_cast_ray(w);//
 		ray += ray_angle;
