@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/26 19:07:37 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/26 20:02:19 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,7 @@ void			ft_sdl_hook(t_w *w)
         	}
 			if (e.type == SDL_KEYDOWN)
    			{
-      		if (e.key.keysym.sym == SDLK_ESCAPE)
-      		{
-				SDL_DestroyWindow(w->sdl_win);
-				SDL_Quit();
-				exit(0);
-			}
-            	quit = -1;
+				quit = ft_ui(w, &e);
         	}
 			/*
         	if (e.type == SDL_MOUSEBUTTONDOWN)
@@ -81,8 +75,8 @@ void		ft_init_rect(SDL_Rect *rect)
 {
 	if (rect)
 	{
-		rect->x = 0;
-		rect->y = 0;
+		rect->x = 50;
+		rect->y = 50;
 		rect->w = 350;
 		rect->h = 350;
 	}
@@ -103,18 +97,17 @@ void				ft_sdl_run(t_w *w)
 	SDL_Surface		*screenSurface;
 	SDL_DisplayMode *displayMode;
 	SDL_Rect		rect;
-	int				res;
 
 	sdl_win = NULL;
 	screenSurface = NULL;
 	displayMode = NULL;
-
 	ft_init_rect(0);
-	res = SDL_GetDesktopDisplayMode(0, displayMode);
-	if(SDL_Init(SDL_INIT_EVERYTHING) < 0)//SDL_INIT_VIDEO
+	if(SDL_Init(SDL_INIT_EVERYTHING) < 0)//SDL_INIT_VIDEO init sdl
+		ft_sdl_error();
+	if(SDL_GetDesktopDisplayMode(0, displayMode))// get display
 		ft_sdl_error();
 	if(!(sdl_win = SDL_CreateWindow("WOLF3D", \
-	SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 800, 0)))
+	SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 800, 0))) //get window
 		ft_sdl_error();
 	printf("sdl_p1\n");
 	if(!(screenSurface = SDL_GetWindowSurface(sdl_win)))

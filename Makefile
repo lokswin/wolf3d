@@ -6,7 +6,7 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/26 18:25:21 by drafe            ###   ########.fr        #
+#    Updated: 2019/10/26 19:20:19 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ LIBS = -L./Libft/ -lft\
 OBJS = main.o\
 	ft_map.o\
 	ft_sdl_run.o\
-	ft_draw.o
+	ft_draw.o\
+	ft_ui.o
 
 all: $(NAME)
 

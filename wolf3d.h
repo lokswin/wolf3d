@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/26 18:58:04 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/26 19:19:21 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void				ft_sdl_error();
 void				ft_sdl_run(t_w *w);
 
 void				ft_draw(t_w *w);
+
+int					ft_ui(t_w *w, SDL_Event	*e);
 
 /*
 include path
