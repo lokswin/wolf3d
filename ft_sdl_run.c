@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/26 18:59:13 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/26 19:07:37 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,17 @@ void			ft_sdl_hook(t_w *w)
 			{
             	quit = -1;
         	}
-        	/*if (e.type == SDL_KEYDOWN)
-			{
+			if (e.type == SDL_KEYDOWN)
+   			{
+      		if (e.key.keysym.sym == SDLK_ESCAPE)
+      		{
+				SDL_DestroyWindow(w->sdl_win);
+				SDL_Quit();
+				exit(0);
+			}
             	quit = -1;
         	}
+			/*
         	if (e.type == SDL_MOUSEBUTTONDOWN)
 			{
             	quit = -1;
