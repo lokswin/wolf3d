@@ -1,0 +1,102 @@
+###MANDATORY###
+- Можно использовать другие библиотеки (X11, SDL, etc...) Но их исходники должны 
+    быть запушены и автоматически устанавливаться при сборке проекта
+- Карта может быть любого размера
+- Карту можно менять без пересборки всего проекта
+- Прохождение через другие окна, сворчивание и F3 не меняют изображение
+- При нажатии крестика или ESC окно закрывается полностью
+- WASD и стрелки движение
+- Разные текстуры в разных направлениях ( N S E W )
+- Написать пару тестов для сломаных карт
+
+
+~~~ BONUS = 5 ~~~(will be entirely IGNORED bcs of ###MANDATORY###):
+- Столкновения со стенами(3)
+- Скайбокс
+- Текстуры пола и/или потолка(1)
+- Предметы в лабиринте(2)
+- Столкновения с предметами(4)
+- Сбор очков за подбор предметов
+- Двери открываются зарываются, использование дверей E - use;
+- Враги
+- Секретные двери
+- Анимации
+- Телепортация на другой лвл
+- Музыка и звуки (5)
+- A Doom Engine > A Duke Nukem 3D engine
+
+//read map
+//check map W & H
+//check symbols in map file
+//printf map man
+//save map in struct s_map
+//save struct s_map into struct s_w
+//build map
+//place player
+//catch user input
+
+DONT DO IT
+    - Картинка для меню
+    - Картинка заставки
+    - Пункты в меню переключать стрелками вниз и вверх
+    - При нажатии ESC в игре возвращает в меню
+    - При нажатии ESC в меню закрывается полностью
+    - Разная высота потолков
+    - Полет на джетпаке с топливом
+    - Колонны разных размеров
+    - Ступени
+    - Разное освещение
+    - Прозрачный забор
+    - Приседания С - crouch
+    - Прыжки SPACE - jump;
+
+
+1. Install SDL2
+In your terminal, run the brew command:
+brew install sdl2
+This will fetch a compiled version of SDL2, so you don’t need to worry about
+ any of the compilation steps mentioned in the SDL docs (https://wiki.libsdl.org/Installation).
+2. Create a project
+mkdir myproject
+cd myproject
+touch main.cpp
+touch Makefile
+mkdir include
+mkdir lib
+In myproject/main.cpp:
+#include <iostream>
+#include <SDL2/SDL.h>
+using namespace std;
+int main() {
+        cout << "Hello World!";
+        SDL_Init(SDL_INIT_VIDEO);
+        return 0;
+    }
+3. Move the SDL files into your project
+It might help to use Finder for this part. Navigate to the place where SDL2 installed. For me, that was:
+/usr/local/Cellar/sdl2/2.0.5
+Copy the contents of
+/usr/local/Cellar/sdl2/2.0.5/include/
+(It should be a folder called SDL2 that contains a bunch of .h files.)
+and paste it into
+myproject/include
+Then, go to
+/usr/local/Cellar/sdl2/2.0.5/lib/
+and copy the contents (some folders and some .a and .dylib files) into
+/myproject/lib
+4. Create your Makefile to compile using SDL2
+In myproject/Makefile:
+game:
+ g++ main.cpp -o play -I include -L lib -l SDL2-2.0.0
+Note: Flags are used to link SDL2 to your project.
+`-I` (i as in include) tells it additional include directories you want to add
+`-L` tells it additional library directories you want to add
+`-l` (lowercase l as in lib) tells it specific library binaries you want to add
+5. Make your project
+In your project’s directory, in the terminal, run:
+make game
+This will compile the game.
+6. Run your project
+./play
+This step runs the executable created by compiling. If all went well,
+ you should see a nice “Hello World!” print. That means you’ve got SDL2 hooked up.

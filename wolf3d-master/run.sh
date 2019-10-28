@@ -1,0 +1,10 @@
+echo "Start install library.";
+#sh ./inst.sh;
+echo "...under construct...";
+echo "Install library done.";
+echo "Start Makefile to compile project.";
+make;
+echo "Makefile done.";
+echo "Start wolf3d.";
+./wolf3d ./maps/map.wolf3d;
+echo "End wolf3d.";
