@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/26 20:04:14 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/28 21:29:06 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int			ft_ui(t_w *w, SDL_Event	*e)
 	w += 0;
 	if (e->key.keysym.sym == SDLK_ESCAPE)
 	{
+		printf("Have a nice day!\n");
 		return(-1);
 	}
 	if ((e->key.keysym.sym == SDLK_UP) || (e->key.keysym.sym == SDLK_w))
@@ -32,15 +33,15 @@ int			ft_ui(t_w *w, SDL_Event	*e)
 	}
 	if ((e->key.keysym.sym == SDLK_DOWN) || (e->key.keysym.sym == SDLK_s))
 	{
-		//move down
+		printf("move down\n");
 	}
 	if ((e->key.keysym.sym == SDLK_RIGHT) || (e->key.keysym.sym == SDLK_d))
 	{
-		//move right
+		printf("move right\n");
 	}
 	if ((e->key.keysym.sym == SDLK_LEFT) || (e->key.keysym.sym == SDLK_a))
 	{
-		//move left
+		printf("move left\n");
 	}
 	return(0);	
 }

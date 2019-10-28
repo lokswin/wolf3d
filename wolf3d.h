@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/26 19:19:21 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/28 22:11:03 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@
 # include <time.h>//time remove before push
 # define deg_to_rad(degs) ((degs) * M_PI / 180.0)
 # define rad_to_deg(rads) ((rads) * 180.0 / M_PI)
+
+/*
+** **************************************************************************
+**	typedef struct s_cross
+**	Structure for store one ray intersection
+** **************************************************************************
+*/
+
+typedef struct		s_cross
+{
+	int				x;
+	int				y;
+}					t_cross;
 
 /*
 ** **************************************************************************
@@ -46,14 +59,18 @@ typedef struct		s_map
 
 typedef struct		s_w
 {
+	SDL_Window		*sdl_win;
+	SDL_Surface		*w_surf;
 	pthread_mutex_t lock_x;
 	t_map			map;
-	SDL_Window		*sdl_win;
 	char			*img;
 	int				threads;
 	int				ln_sz;
 	int				bitspp;
 	int				endi;
+	int				px;
+	int				py;
+	int				ray_angle;
 	void			*mlx_p;
 	void			*win_p;
 	void			*img_p;
