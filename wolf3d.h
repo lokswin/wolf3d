@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/28 22:11:03 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/29 17:20:33 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,21 @@ typedef struct		s_w
 	SDL_Surface		*w_surf;
 	pthread_mutex_t lock_x;
 	t_map			map;
+	t_cross			hor_point;
+	t_cross			vert_point;
+	int				player_x;
+	int 			player_y;
+	int				player_speed;
+	int				player_height;
+	int				player_dist;
+	int				player_angle;
+	int				px;
+	int				py;
 	char			*img;
 	int				threads;
 	int				ln_sz;
 	int				bitspp;
 	int				endi;
-	int				px;
-	int				py;
 	int				ray_angle;
 	void			*mlx_p;
 	void			*win_p;
@@ -85,7 +93,6 @@ void				ft_sdl_run(t_w *w);
 void				ft_draw(t_w *w);
 
 int					ft_ui(t_w *w, SDL_Event	*e);
-
 /*
 include path
 //${workspaceFolder}*{*}
