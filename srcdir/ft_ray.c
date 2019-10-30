@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/30 13:24:26 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/30 17:00:34 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,6 @@ void			ft_ray(t_w *w)
 		w->px = i;
 		w->py = 0;
 		ray_len = ft_cast_ray(w);//cast new ray for every pixel
-		ft_putnbr(ray_len);
 		ray_len = abs(ray_len) + 2;
 		slice_wall_height = WALL_SIZE / ray_len * w->player_dist;
 		slice_wall_bottom = (H_WIN / 2) + (slice_wall_height * 0.5);
@@ -190,7 +189,7 @@ void			ft_ray(t_w *w)
 		rect.y = slice_wall_top;
 		rect.w = 1;
 		rect.h = (slice_wall_bottom - slice_wall_top) + 1;
-		printf("[%d], rect.x=%d rect.y=%d rect.w=%d rect.h=%d\n", i, rect.x, rect.y, rect.w, rect.h);
+		//printf("[%d], rect.x=%d rect.y=%d rect.w=%d rect.h=%d\n", i, rect.x, rect.y, rect.w, rect.h);
 		if(SDL_FillRect(w->w_surf, &rect, 0X32) != 0)//draw some rectangle
 			ft_sdl_error();
 		//(x, y, width, height, cssColor)	castColumn, topOfWall, 1, (bottomOfWall-topOfWall)+1, cssColor);

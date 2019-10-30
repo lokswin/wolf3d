@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/30 13:46:38 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/30 16:57:23 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct		s_cross
 
 typedef struct		s_map
 {
+	int				**dig_map;
 	int				size;
 }					t_map;
 
@@ -95,6 +96,8 @@ void				ft_init_rect(SDL_Rect *rect);
 void				ft_draw(t_w *w);
 
 int					ft_ui(t_w *w, SDL_Event	*e);
+
+void				ft_show_map(t_map *map);
 /*
 include path
 //${workspaceFolder}*{*}

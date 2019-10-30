@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/29 19:13:12 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/30 16:58:04 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int							main(int argc, char **argv)
 	ft_read(fd, &new_w);
 	
 	printf("|{after reading map we get mapsize=%d}|\n", new_w.map.size);
+	ft_show_map(&new_w.map);
 	ft_sdl_run(&new_w);
 	//ft_ray(&new_w);
 	t = clock() - t;

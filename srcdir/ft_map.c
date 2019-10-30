@@ -6,11 +6,12 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/29 16:50:10 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/30 19:15:14 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
+
 /*
 ** **************************************************************************
 **	static void ft_map_chk_p2(int len, char *line)
@@ -42,12 +43,31 @@ static int		ft_map_chk_exp(int len, char *line)
 ** **************************************************************************
 */
 
-static int		ft_map_save(int len, char *line, t_map *map)
+static int		ft_map_save(int	ln_nb, char *line, t_map *map)
 {
+	int			len;
+
+	len = ft_strlen(line);
+	map->size = 20;//len
 	if (!ft_map_chk_exp(len, line))
 		return (0);
-	line += 0;
-	map->size = len;
+	if (ln_nb != 0)
+		while (ln_nb < 20)
+		{
+			if(!(map->dig_map[ln_nb] = (int*)malloc(sizeof(int) * 20)))
+			{
+				ft_putstr_fd("map malloc error #2", 2);
+				return (0);
+			}
+			ft_save_line(line, map->dig_map[ln_nb]);
+			i++;
+		}
+	else
+		if(!(map->dig_map = (int**)malloc(sizeof(int*) * 20)))
+		{
+			ft_putstr_fd("map malloc error #1", 2);
+			return (0);
+		}
 	return (1);
 }
 
@@ -73,11 +93,13 @@ int					ft_map_chk(int fd, t_w *w)
 			ft_putstr_fd("GNL error. ", 2);
 		if (res == 0)
 			break ;
-		if (!ft_map_save(ft_strlen(line), line, &w->map))
-			return (0);
+		ft_map_save(i, line, &w->map);
+		//if (ft_map_save(i, line, &w->map) != 0)
+		//	return (0);
 		ft_strdel(&line);
 		i++;
 	}
+	
 	if (i > MAX_MAP_H || i < MIN_MAP_H)
 		return (0);
 	return(1);

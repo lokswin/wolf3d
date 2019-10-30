@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ui.c                                            :+:      :+:    :+:   */
+/*   ft_map_save.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/30 21:35:43 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/30 21:26:57 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,42 @@
 
 /*
 ** **************************************************************************
-**	int ft_ui(t_w *w, SDL_Event	*e)
-**	Function to handle user input
+**	void ft_show_map(int len, char *line)
+**	Function to print user map
 ** **************************************************************************
 */
 
-int			ft_ui(t_w *w, SDL_Event	*e)
+void		ft_show_map(t_map *map)
 {
-	w += 0;
-	if (e->key.keysym.sym == SDLK_ESCAPE)//esc exit
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	printf("\n\n\tPRINT MAP\nmap_size=%d\n", map->size);
+	while(i < map->size)
 	{
-		return(-1);
+		j = 0;
+		printf("|map[%d]", i);
+		while(j < map->size)
+		{
+			printf("%d|", map->dig_map[i][j]);
+			//printf("map[%d][%d]=%d|", i, j, map->dig_map[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
 	}
-	if ((e->key.keysym.sym == SDLK_UP) || (e->key.keysym.sym == SDLK_w))
-	{
-		printf("move up\n");
-	}
-	if ((e->key.keysym.sym == SDLK_DOWN) || (e->key.keysym.sym == SDLK_s))
-	{
-		printf("move down\n");
-	}
-	if ((e->key.keysym.sym == SDLK_RIGHT) || (e->key.keysym.sym == SDLK_d))
-	{
-		printf("move right\n");
-	}
-	if ((e->key.keysym.sym == SDLK_LEFT) || (e->key.keysym.sym == SDLK_a))
-	{
-		printf("move left\n");
-	}
-	return(0);	
+}
+
+/*
+** **************************************************************************
+**	static void ft_map_save(char *line, t_map map)
+**	Function to save one line
+** **************************************************************************
+*/
+
+void		ft_show_map(char *line, int *ptr)
+{
+	
 }

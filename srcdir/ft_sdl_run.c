@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/29 19:13:04 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/30 21:35:49 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void			ft_sdl_hook(t_w *w)
 	{
     	while (SDL_PollEvent(&e))
 		{
-        	if (e.type == SDL_QUIT)
+        	if (e.type == SDL_QUIT)//close with button
             	quit = -1;
-			if (e.type == SDL_KEYDOWN)
+			if (e.type == SDL_KEYDOWN)//user key input
 				quit = ft_ui(w, &e);
 			/*
-        	if (e.type == SDL_MOUSEBUTTONDOWN)
+        	if (e.type == SDL_MOUSEBUTTONDOWN)//user mouse ipnut
 			{
             	quit = -1;
         	}*/
@@ -75,7 +75,6 @@ void				ft_sdl_run(t_w *w)
 	SDL_Rect		rect;
 
 	displayMode = NULL;
-	ft_init_rect(&rect);
 	if(SDL_Init(SDL_INIT_EVERYTHING) < 0)//main sdl init 
 		ft_sdl_error();
 	if(SDL_GetDesktopDisplayMode(0, displayMode))//choose display for work
@@ -84,8 +83,6 @@ void				ft_sdl_run(t_w *w)
 		ft_sdl_error();
 	if(!(w->w_surf = SDL_GetWindowSurface(w->sdl_win)))//get window surface
 		ft_sdl_error();
-	if(SDL_FillRect(w->w_surf, &rect, SDL_MapRGB(w->w_surf->format, 0xFF, 0x00, 0xFF)) != 0)//draw some rectangle
-			ft_sdl_error();
 	if (SDL_UpdateWindowSurface(w->sdl_win) != 0)//update window after draw rectangle
 		ft_sdl_error();
 	ft_ray(w);
