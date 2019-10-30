@@ -6,57 +6,56 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/29 16:58:26 by drafe            ###   ########.fr        #
+#    Updated: 2019/10/30 14:52:18 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g# --std=c99 -m64 -D_THREAD_SAFE
+CFLAGS = -Wall -Wextra -Werror#-g --std=c99 -m64 -D_THREAD_SAFE
 
 NAME = wolf3d
 
-HEADERS = wolf3d.h\
-	keys.h\
-	constants.h
+INCLUDES = ./includes/
 
-INCLUDES = -I include
+HEADERS = $(INCLUDES)wolf3d.h\
+	$(INCLUDES)keys.h\
+	$(INCLUDES)constants.h
 
-GO = $(shell pkg-config --libs --cflags ./sdl2lib/pkgconfig/sdl2.pc)
+GO = $(shell pkg-config --libs --cflags $(INCLUDES)sdl2lib/pkgconfig/sdl2.pc)
 
-LIBS = -L./Libft/ -lft\
+LIBS = -L$(INCLUDES)libft/ -lft\
 	-lSDL2 -lm
-	#-L./sdl2lib -l SDL2-2.0.0\
-	#-framework OpenGL -framework AppKit# -framework cocoa -framework Metal -framework OpenGL -framework AppKit
 
-#FRAMEWORKS = -F . -framework cocoa -framework Metal -framework OpenGL -framework AppKit
+SRCDIR := srcdir
 
-OBJS = main.o\
-	ft_map.o\
-	ft_sdl_run.o\
-	ft_draw.o\
-	ft_ui.o
+OBJDIR := objdir
+
+OBJS := $(addprefix $(OBJDIR)/, main.o ft_map.o ft_sdl_run.o\
+	ft_ray.o ft_draw.o ft_ui.o)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)
+	$(CC) $(CFLAGS) -I$(INCLUDES) -o $@ -c $<
 
 all: $(NAME)
 
-$(NAME):$(OBJS) | lib
-	
-	$(CC) $(GO) $(CFLAGS) $(INCLUDES) $(LIBS) -o $(NAME) $(OBJS) 
+$(NAME): $(OBJS)
+	$(CC) $(GO) $(CFLAGS) -I$(INCLUDES) $(LIBS) -o $(NAME) $(OBJS)
 
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
-lib:
-	@make -f Makefile.libft
+$(OBJS): | $(OBJDIR)
+
+$(OBJDIR): | libft
+	mkdir $(OBJDIR)
+
+libft:
+	make -C ./includes/libft/
 
 clean:
-	@make -f Makefile.libft clean
-	@rm -rf $(OBJS)
+	make -C ./includes/libft/ clean
+	rm -rf $(OBJS)
 
 fclean: clean
-	@make -f Makefile.libft fclean
-	@rm -f $(NAME)
+	make -C ./includes/libft/ fclean
+	rm -f $(NAME)
 
 re: fclean all
- 
