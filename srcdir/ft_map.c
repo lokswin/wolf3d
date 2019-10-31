@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/31 21:04:17 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/31 21:09:25 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static int		ft_map_save(char arr[MAX_MAP_H][MAX_MAP_W], t_map *map)
 	i = 0;
 	while(i < map->size)
 	{
-		printf("ft_map_save: ln_nb=%d line=%s\n", i, arr[i]);
 		if (i != 0)
 		{
 			if(!(map->dig_map[i] = (int*)malloc(sizeof(int) * 20)))
@@ -63,10 +62,8 @@ static int		ft_map_chk_exp(int len, char *line, int *size)
 	line += 0;
 	if ((len > MAX_MAP_W) || (len < MIN_MAP_W))
 			return (0);
-	printf("\nsize=%d\n", *size);
 	if (len > size[0])
 		size[0] = len;
-	printf("\nsize=%d\n", *size);
 	return (1);
 }
 

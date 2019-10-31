@@ -6,7 +6,7 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/31 21:01:47 by drafe            ###   ########.fr        #
+#    Updated: 2019/10/31 21:40:03 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,11 @@ HEADERS = $(INCLUDES)wolf3d.h\
 	$(INCLUDES)keys.h\
 	$(INCLUDES)constants.h
 
-GO = $(shell pkg-config --libs --cflags $(INCLUDES)sdl2lib/pkgconfig/sdl2.pc)
+#GO = $(shell pkg-config --libs --cflags $(INCLUDES)sdl2lib/pkgconfig/sdl2.pc)
 
 LIBS = -L$(INCLUDES)libft/ -lft\
-	-lSDL2 -lm
+	-I/includes/SDL2\
+	-L$(INCLUDES)sdl2lib/ -lSDL2 -lm
 
 SRCDIR := srcdir
 
@@ -40,7 +41,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(GO) $(CFLAGS) -I$(INCLUDES) $(LIBS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -I$(INCLUDES) $(LIBS) -o $(NAME) $(OBJS)
 
 $(OBJS): | $(OBJDIR)
 
