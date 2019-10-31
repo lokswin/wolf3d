@@ -123,59 +123,140 @@ untitled7/fast:
 	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/build
 .PHONY : untitled7/fast
 
-main.o: main.cpp.o
+main_w.o: main_w.c.o
 
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-quickcg.o: quickcg.cpp.o
-
-.PHONY : quickcg.o
+.PHONY : main_w.o
 
 # target to build an object file
-quickcg.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/quickcg.cpp.o
-.PHONY : quickcg.cpp.o
+main_w.c.o:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main_w.c.o
+.PHONY : main_w.c.o
 
-quickcg.i: quickcg.cpp.i
+main_w.i: main_w.c.i
 
-.PHONY : quickcg.i
+.PHONY : main_w.i
 
 # target to preprocess a source file
-quickcg.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/quickcg.cpp.i
-.PHONY : quickcg.cpp.i
+main_w.c.i:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main_w.c.i
+.PHONY : main_w.c.i
 
-quickcg.s: quickcg.cpp.s
+main_w.s: main_w.c.s
 
-.PHONY : quickcg.s
+.PHONY : main_w.s
 
 # target to generate assembly for a file
-quickcg.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/quickcg.cpp.s
-.PHONY : quickcg.cpp.s
+main_w.c.s:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main_w.c.s
+.PHONY : main_w.c.s
+
+sources/config.o: sources/config.c.o
+
+.PHONY : sources/config.o
+
+# target to build an object file
+sources/config.c.o:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/config.c.o
+.PHONY : sources/config.c.o
+
+sources/config.i: sources/config.c.i
+
+.PHONY : sources/config.i
+
+# target to preprocess a source file
+sources/config.c.i:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/config.c.i
+.PHONY : sources/config.c.i
+
+sources/config.s: sources/config.c.s
+
+.PHONY : sources/config.s
+
+# target to generate assembly for a file
+sources/config.c.s:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/config.c.s
+.PHONY : sources/config.c.s
+
+sources/draw.o: sources/draw.c.o
+
+.PHONY : sources/draw.o
+
+# target to build an object file
+sources/draw.c.o:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/draw.c.o
+.PHONY : sources/draw.c.o
+
+sources/draw.i: sources/draw.c.i
+
+.PHONY : sources/draw.i
+
+# target to preprocess a source file
+sources/draw.c.i:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/draw.c.i
+.PHONY : sources/draw.c.i
+
+sources/draw.s: sources/draw.c.s
+
+.PHONY : sources/draw.s
+
+# target to generate assembly for a file
+sources/draw.c.s:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/draw.c.s
+.PHONY : sources/draw.c.s
+
+sources/ft_ui.o: sources/ft_ui.c.o
+
+.PHONY : sources/ft_ui.o
+
+# target to build an object file
+sources/ft_ui.c.o:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_ui.c.o
+.PHONY : sources/ft_ui.c.o
+
+sources/ft_ui.i: sources/ft_ui.c.i
+
+.PHONY : sources/ft_ui.i
+
+# target to preprocess a source file
+sources/ft_ui.c.i:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_ui.c.i
+.PHONY : sources/ft_ui.c.i
+
+sources/ft_ui.s: sources/ft_ui.c.s
+
+.PHONY : sources/ft_ui.s
+
+# target to generate assembly for a file
+sources/ft_ui.c.s:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_ui.c.s
+.PHONY : sources/ft_ui.c.s
+
+sources/screen.o: sources/screen.c.o
+
+.PHONY : sources/screen.o
+
+# target to build an object file
+sources/screen.c.o:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/screen.c.o
+.PHONY : sources/screen.c.o
+
+sources/screen.i: sources/screen.c.i
+
+.PHONY : sources/screen.i
+
+# target to preprocess a source file
+sources/screen.c.i:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/screen.c.i
+.PHONY : sources/screen.c.i
+
+sources/screen.s: sources/screen.c.s
+
+.PHONY : sources/screen.s
+
+# target to generate assembly for a file
+sources/screen.c.s:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/screen.c.s
+.PHONY : sources/screen.c.s
 
 # Help Target
 help:
@@ -186,12 +267,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... untitled7"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... quickcg.o"
-	@echo "... quickcg.i"
-	@echo "... quickcg.s"
+	@echo "... main_w.o"
+	@echo "... main_w.i"
+	@echo "... main_w.s"
+	@echo "... sources/config.o"
+	@echo "... sources/config.i"
+	@echo "... sources/config.s"
+	@echo "... sources/draw.o"
+	@echo "... sources/draw.i"
+	@echo "... sources/draw.s"
+	@echo "... sources/ft_ui.o"
+	@echo "... sources/ft_ui.i"
+	@echo "... sources/ft_ui.s"
+	@echo "... sources/screen.o"
+	@echo "... sources/screen.i"
+	@echo "... sources/screen.s"
 .PHONY : help
 
 

@@ -3,8 +3,8 @@ project(untitled7)
 
 set(CMAKE_CXX_STANDARD 17)
 
-#add_executable(untitled7 main.c sources/ft_map.c sources/ft_sdl_run.c sources/ft_draw.c sources/ft_ui.c)
-add_executable(untitled7 main.cpp quickcg.cpp)
+#add_executable(untitled7 main.c sources/ft_map.c sources/ft_sdl_run.c sources/ft_draw.c sources/ft_ui.c sources/ft_ray.c)
+add_executable(untitled7 main_w.c  sources/ft_ui.c sources/config.c sources/draw.c sources/screen.c )
 
 include_directories (include/ libft/ )
 

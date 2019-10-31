@@ -638,3 +638,21 @@ SDL2/quickcg.h
 SDL2/SDL.h
 /Users/nshelly/CLionProjects/untitled7/SDL2/SDL.h
 
+/Users/nshelly/CLionProjects/untitled7/quickcg.cpp
+SDL2/SDL.h
+/Users/nshelly/CLionProjects/untitled7/SDL2/SDL.h
+SDL2/quickcg.h
+/Users/nshelly/CLionProjects/untitled7/SDL2/quickcg.h
+cstdlib
+-
+cmath
+-
+vector
+-
+map
+-
+iostream
+-
+fstream
+-
+

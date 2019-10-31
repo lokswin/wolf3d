@@ -615,8 +615,8 @@ close_code.h
 ../include/keys.h
 
 ../include/wolf3d.h
-./libft.h
-../include/./libft.h
+libft.h
+../include/libft.h
 keys.h
 ../include/keys.h
 constants.h
@@ -634,7 +634,7 @@ stdio.h
 time.h
 -
 
-../libft/./libft.h
+../libft/libft.h
 unistd.h
 -
 stdlib.h
@@ -646,23 +646,7 @@ sys/uio.h
 limits.h
 -
 
-/Users/nshelly/CLionProjects/untitled7/main.c
+/Users/nshelly/CLionProjects/untitled7/main_w.c
 wolf3d.h
 /Users/nshelly/CLionProjects/untitled7/wolf3d.h
-
-/Users/nshelly/CLionProjects/untitled7/sources/ft_draw.c
-wolf3d.h
-/Users/nshelly/CLionProjects/untitled7/sources/wolf3d.h
-
-/Users/nshelly/CLionProjects/untitled7/sources/ft_map.c
-wolf3d.h
-/Users/nshelly/CLionProjects/untitled7/sources/wolf3d.h
-
-/Users/nshelly/CLionProjects/untitled7/sources/ft_sdl_run.c
-wolf3d.h
-/Users/nshelly/CLionProjects/untitled7/sources/wolf3d.h
-
-/Users/nshelly/CLionProjects/untitled7/sources/ft_ui.c
-wolf3d.h
-/Users/nshelly/CLionProjects/untitled7/sources/wolf3d.h
 

@@ -86,10 +86,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/nshelly/CLionProjects/untitled7/main.cpp">
+		<Unit filename="/Users/nshelly/CLionProjects/untitled7/main_w.c">
 			<Option target="untitled7"/>
 		</Unit>
-		<Unit filename="/Users/nshelly/CLionProjects/untitled7/quickcg.cpp">
+		<Unit filename="/Users/nshelly/CLionProjects/untitled7/sources/config.c">
+			<Option target="untitled7"/>
+		</Unit>
+		<Unit filename="/Users/nshelly/CLionProjects/untitled7/sources/draw.c">
+			<Option target="untitled7"/>
+		</Unit>
+		<Unit filename="/Users/nshelly/CLionProjects/untitled7/sources/ft_ui.c">
+			<Option target="untitled7"/>
+		</Unit>
+		<Unit filename="/Users/nshelly/CLionProjects/untitled7/sources/screen.c">
 			<Option target="untitled7"/>
 		</Unit>
 		<Unit filename="/Users/nshelly/CLionProjects/untitled7/CMakeLists.txt">

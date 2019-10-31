@@ -57,46 +57,91 @@ include CMakeFiles/untitled7.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/untitled7.dir/flags.make
 
-CMakeFiles/untitled7.dir/main.cpp.o: CMakeFiles/untitled7.dir/flags.make
-CMakeFiles/untitled7.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled7.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled7.dir/main.cpp.o -c /Users/nshelly/CLionProjects/untitled7/main.cpp
+CMakeFiles/untitled7.dir/main_w.c.o: CMakeFiles/untitled7.dir/flags.make
+CMakeFiles/untitled7.dir/main_w.c.o: ../main_w.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled7.dir/main_w.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/main_w.c.o   -c /Users/nshelly/CLionProjects/untitled7/main_w.c
 
-CMakeFiles/untitled7.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled7.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/main.cpp > CMakeFiles/untitled7.dir/main.cpp.i
+CMakeFiles/untitled7.dir/main_w.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled7.dir/main_w.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/main_w.c > CMakeFiles/untitled7.dir/main_w.c.i
 
-CMakeFiles/untitled7.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled7.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/main.cpp -o CMakeFiles/untitled7.dir/main.cpp.s
+CMakeFiles/untitled7.dir/main_w.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/main_w.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/main_w.c -o CMakeFiles/untitled7.dir/main_w.c.s
 
-CMakeFiles/untitled7.dir/quickcg.cpp.o: CMakeFiles/untitled7.dir/flags.make
-CMakeFiles/untitled7.dir/quickcg.cpp.o: ../quickcg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled7.dir/quickcg.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled7.dir/quickcg.cpp.o -c /Users/nshelly/CLionProjects/untitled7/quickcg.cpp
+CMakeFiles/untitled7.dir/sources/ft_ui.c.o: CMakeFiles/untitled7.dir/flags.make
+CMakeFiles/untitled7.dir/sources/ft_ui.c.o: ../sources/ft_ui.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled7.dir/sources/ft_ui.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/ft_ui.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/ft_ui.c
 
-CMakeFiles/untitled7.dir/quickcg.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled7.dir/quickcg.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/quickcg.cpp > CMakeFiles/untitled7.dir/quickcg.cpp.i
+CMakeFiles/untitled7.dir/sources/ft_ui.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled7.dir/sources/ft_ui.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/sources/ft_ui.c > CMakeFiles/untitled7.dir/sources/ft_ui.c.i
 
-CMakeFiles/untitled7.dir/quickcg.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled7.dir/quickcg.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/quickcg.cpp -o CMakeFiles/untitled7.dir/quickcg.cpp.s
+CMakeFiles/untitled7.dir/sources/ft_ui.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/sources/ft_ui.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/sources/ft_ui.c -o CMakeFiles/untitled7.dir/sources/ft_ui.c.s
+
+CMakeFiles/untitled7.dir/sources/config.c.o: CMakeFiles/untitled7.dir/flags.make
+CMakeFiles/untitled7.dir/sources/config.c.o: ../sources/config.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled7.dir/sources/config.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/config.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/config.c
+
+CMakeFiles/untitled7.dir/sources/config.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled7.dir/sources/config.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/sources/config.c > CMakeFiles/untitled7.dir/sources/config.c.i
+
+CMakeFiles/untitled7.dir/sources/config.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/sources/config.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/sources/config.c -o CMakeFiles/untitled7.dir/sources/config.c.s
+
+CMakeFiles/untitled7.dir/sources/draw.c.o: CMakeFiles/untitled7.dir/flags.make
+CMakeFiles/untitled7.dir/sources/draw.c.o: ../sources/draw.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled7.dir/sources/draw.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/draw.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/draw.c
+
+CMakeFiles/untitled7.dir/sources/draw.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled7.dir/sources/draw.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/sources/draw.c > CMakeFiles/untitled7.dir/sources/draw.c.i
+
+CMakeFiles/untitled7.dir/sources/draw.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/sources/draw.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/sources/draw.c -o CMakeFiles/untitled7.dir/sources/draw.c.s
+
+CMakeFiles/untitled7.dir/sources/screen.c.o: CMakeFiles/untitled7.dir/flags.make
+CMakeFiles/untitled7.dir/sources/screen.c.o: ../sources/screen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled7.dir/sources/screen.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/screen.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/screen.c
+
+CMakeFiles/untitled7.dir/sources/screen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled7.dir/sources/screen.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/sources/screen.c > CMakeFiles/untitled7.dir/sources/screen.c.i
+
+CMakeFiles/untitled7.dir/sources/screen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/sources/screen.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/sources/screen.c -o CMakeFiles/untitled7.dir/sources/screen.c.s
 
 # Object files for target untitled7
 untitled7_OBJECTS = \
-"CMakeFiles/untitled7.dir/main.cpp.o" \
-"CMakeFiles/untitled7.dir/quickcg.cpp.o"
+"CMakeFiles/untitled7.dir/main_w.c.o" \
+"CMakeFiles/untitled7.dir/sources/ft_ui.c.o" \
+"CMakeFiles/untitled7.dir/sources/config.c.o" \
+"CMakeFiles/untitled7.dir/sources/draw.c.o" \
+"CMakeFiles/untitled7.dir/sources/screen.c.o"
 
 # External object files for target untitled7
 untitled7_EXTERNAL_OBJECTS =
 
-untitled7: CMakeFiles/untitled7.dir/main.cpp.o
-untitled7: CMakeFiles/untitled7.dir/quickcg.cpp.o
+untitled7: CMakeFiles/untitled7.dir/main_w.c.o
+untitled7: CMakeFiles/untitled7.dir/sources/ft_ui.c.o
+untitled7: CMakeFiles/untitled7.dir/sources/config.c.o
+untitled7: CMakeFiles/untitled7.dir/sources/draw.c.o
+untitled7: CMakeFiles/untitled7.dir/sources/screen.c.o
 untitled7: CMakeFiles/untitled7.dir/build.make
 untitled7: ../libft/libft.a
 untitled7: CMakeFiles/untitled7.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable untitled7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable untitled7"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled7.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
