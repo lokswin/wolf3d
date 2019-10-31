@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/30 19:15:14 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/31 21:04:17 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,35 @@
 
 /*
 ** **************************************************************************
-**	static void ft_map_chk_p2(int len, char *line)
-**	Second function to check user map symbols
+**	static int ft_map_save(int	ln_nb, char *line, t_map *map)
+**	Function to save map
 ** **************************************************************************
 */
 
-static int		ft_map_chk_exp(int len, char *line)
+static int		ft_map_save(char arr[MAX_MAP_H][MAX_MAP_W], t_map *map)
 {
-	int			i;
+	int		i;
 
 	i = 0;
-	line += 0;
-	if ((len > MAX_MAP_W) || (len < MIN_MAP_W))
-			return (0);
-	while (i < len)
+	while(i < map->size)
 	{
-		if (line[i] != 'w')
-			return (0);
+		printf("ft_map_save: ln_nb=%d line=%s\n", i, arr[i]);
+		if (i != 0)
+		{
+			if(!(map->dig_map[i] = (int*)malloc(sizeof(int) * 20)))
+			{
+				ft_putstr_fd("map malloc error #2", 2);
+				return (0);
+			}
+		}
+		else
+			if(!(map->dig_map = (int**)malloc(sizeof(int*) * 20)) || \
+			!(map->dig_map[i] = (int*)malloc(sizeof(int) * 20)))
+			{
+				ft_putstr_fd("map malloc error #1", 2);
+				return (0);
+			}
+		ft_save_line(arr[i], map->dig_map[i], map->size);
 		i++;
 	}
 	return (1);
@@ -38,36 +50,23 @@ static int		ft_map_chk_exp(int len, char *line)
 
 /*
 ** **************************************************************************
-**	static void ft_map_save(char *line, t_map map)
-**	Function to save map
+**	static int ft_map_chk_exp(int len, char *line)
+**	Second function to check user map symbols
 ** **************************************************************************
 */
 
-static int		ft_map_save(int	ln_nb, char *line, t_map *map)
+static int		ft_map_chk_exp(int len, char *line, int *size)
 {
-	int			len;
+	int			i;
 
-	len = ft_strlen(line);
-	map->size = 20;//len
-	if (!ft_map_chk_exp(len, line))
-		return (0);
-	if (ln_nb != 0)
-		while (ln_nb < 20)
-		{
-			if(!(map->dig_map[ln_nb] = (int*)malloc(sizeof(int) * 20)))
-			{
-				ft_putstr_fd("map malloc error #2", 2);
-				return (0);
-			}
-			ft_save_line(line, map->dig_map[ln_nb]);
-			i++;
-		}
-	else
-		if(!(map->dig_map = (int**)malloc(sizeof(int*) * 20)))
-		{
-			ft_putstr_fd("map malloc error #1", 2);
+	i = 0;
+	line += 0;
+	if ((len > MAX_MAP_W) || (len < MIN_MAP_W))
 			return (0);
-		}
+	printf("\nsize=%d\n", *size);
+	if (len > size[0])
+		size[0] = len;
+	printf("\nsize=%d\n", *size);
 	return (1);
 }
 
@@ -80,46 +79,30 @@ static int		ft_map_save(int	ln_nb, char *line, t_map *map)
 
 int					ft_map_chk(int fd, t_w *w)
 {
+	char	arr[MAX_MAP_H][MAX_MAP_W];
 	char	*line;
 	int		res;
 	int		i;
 
 	i = 0;
 	res = 1;
+	w->map.size = 0;
 	while (i < MAX_MAP_H + 1)
 	{
-		res = ft_get_next_line(fd, &line);
-		if (res == -1)
+		if ((res = ft_get_next_line(fd, &line)) == -1)
 			ft_putstr_fd("GNL error. ", 2);
 		if (res == 0)
 			break ;
-		ft_map_save(i, line, &w->map);
-		//if (ft_map_save(i, line, &w->map) != 0)
-		//	return (0);
-		ft_strdel(&line);
+		if (!ft_map_chk_exp(ft_strlen(line), line, &w->map.size))
+			return (0);
+		ft_strcpy(arr[i], line);
+		free(line);
 		i++;
 	}
-	
-	if (i > MAX_MAP_H || i < MIN_MAP_H)
+	if (i > w->map.size)
+		w->map.size = i;
+	if ((i > MAX_MAP_H) || (i < MIN_MAP_H) || !ft_map_save(arr, &w->map))
 		return (0);
+	ft_map_save(arr, &w->map);
 	return(1);
-}
-
-/*
-** **************************************************************************
-**	void ft_put_map_man()
-**	Function to print map man
-** **************************************************************************
-*/
-
-void				ft_put_map_man()
-{
-	ft_putstr("usage ./wolf3d ./maps/map.wolf3d:\n\
-	\n\tMap width - [4-50]\n\
-	Map height - [4-50]\n\
-	w - wall block\n\
-	o1 - objects[1-4]\n\
-	1 - empty blocks with floor and ceiling[1-4]\n\
-	p - player\n\
-	\n");
 }

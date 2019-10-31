@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/30 17:00:34 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/31 18:32:50 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,6 +164,7 @@ void			ft_ray(t_w *w)
 	i = 0;
 	ray = 0;
 	fov = 60;
+	printf("\nft_ray_start\n");
 	w->player_speed = WALL_SIZE / 4;
 	w->player_height = WALL_SIZE / 2;
 	w->player_dist = (W_WIN / 2) / (tan(deg_to_rad(30)));

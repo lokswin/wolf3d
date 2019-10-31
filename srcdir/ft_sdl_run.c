@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/30 21:35:49 by drafe            ###   ########.fr       */
+/*   Updated: 2019/10/31 18:07:03 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void			ft_sdl_hook(t_w *w)
             	quit = -1;
         	}*/
 		}
-		
     }
 	ft_putstr("Have a nice day!\n");
 }
@@ -72,7 +71,6 @@ void		ft_sdl_error()
 void				ft_sdl_run(t_w *w)
 {
 	SDL_DisplayMode *displayMode;
-	SDL_Rect		rect;
 
 	displayMode = NULL;
 	if(SDL_Init(SDL_INIT_EVERYTHING) < 0)//main sdl init 
