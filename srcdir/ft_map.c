@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/01 18:57:11 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/01 21:40:25 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 ** **************************************************************************
 */
 
-static int		ft_save(char arr[MAX_MAP_H + 1][MAX_MAP_W + 1], t_map *map)
+static int		ft_save(char arr[MAX_MAP_H + 2][MAX_MAP_W + 2], t_map *map)
 {
 	int		i;
 
-	i = 0;
-	while(i < map->size)
+	i = -1;
+	while(++i < map->size)
 	{
 		if (i != 0)
 		{
@@ -33,16 +33,19 @@ static int		ft_save(char arr[MAX_MAP_H + 1][MAX_MAP_W + 1], t_map *map)
 				ft_putstr_fd("map malloc error #2", 2);
 				return (0);
 			}
+			ft_save_line(arr[i - 1], map->dig_map[i], map->size);
 		}
 		else
+		{
 			if(!(map->dig_map = (int**)malloc(sizeof(int*) * map->size)) || \
 			!(map->dig_map[i] = (int*)malloc(sizeof(int) * map->size)))
 			{
 				ft_putstr_fd("map malloc error #1", 2);
 				return (0);
 			}
-		ft_save_line(arr[i], map->dig_map[i], map->size);
-		i++;
+			ft_save_line(NULL, map->dig_map[0], map->size);
+		}
+			
 	}
 	return (1);
 }
@@ -62,9 +65,9 @@ static int		ft_map_chk_exp(int file_w, int file_h, char *line, t_map *map)
 	if ((file_w >= MAX_MAP_W) || (file_w <= MIN_MAP_W) || (file_h >= MAX_MAP_H))
 			return (0);
 	if (file_w > map->size)
-		map->size = file_w + 1;
+		map->size = file_w + 2;
 	if (file_h > map->size)
-		map->size = file_h + 1;
+		map->size = file_h + 2;
 	while(++i < file_w)
 	{
 		if (line[i] == 'p')
@@ -82,7 +85,7 @@ static int		ft_map_chk_exp(int file_w, int file_h, char *line, t_map *map)
 
 int					ft_map_chk(int fd, t_w *w)
 {
-	char	arr[MAX_MAP_H + 1][MAX_MAP_W + 1];
+	char	arr[MAX_MAP_H + 2][MAX_MAP_W + 2];
 	char	*line;
 	int		gnl_res;
 	int		file_h;

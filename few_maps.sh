@@ -1,7 +1,7 @@
-echo "      Start ~~check~~ your wolf3d     ";
+echo "      START ~~CHECK~~ YOUR WOLF3D     ";
 
 echo "valid_1";
-./wolf3d ./maps/mapw.wolf3d;
+./wolf3d ./maps/map.wolf3d;
 
 echo "error_1";
 ./wolf3d ./maps/1;
@@ -58,4 +58,4 @@ echo "error_16";
 #./wolf3d ./maps/15;
 
 
-echo "      End ~~check~~ wolf3d.       ";
+echo "      END ~~CHECK~~ WOLF3D.       ";

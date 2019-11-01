@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/01 18:56:13 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/01 21:53:37 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,28 +63,52 @@ void				ft_put_map_man()
 
 /*
 ** **************************************************************************
+**	static void ft_init_wall(char *line, t_map map)
+**	Function to place walls everywhere
+** **************************************************************************
+*/
+
+static void		ft_init_wall(int *ptr, int size)
+{
+	int			i;
+
+	i = 0;
+	while(i < size+1)
+	{
+		ptr[i] = 2;
+		i++;
+	}
+}
+
+/*
+** **************************************************************************
 **	static void ft_map_save(char *line, t_map map)
 **	Function to save one line
 ** **************************************************************************
 */
 
-void		ft_save_line(char *line, int *ptr, int size)
+int		ft_save_line(char *line, int *ptr, int size)
 {
 	int		i;
 
-	i = 0;
+	i = -1;
+	ft_init_wall(ptr, size);
 	//ft_putstr("\nstartsave_line\n");
-	while (i < size)
+	while (++i < size)
 	{
-		if (line[i] == 'w')
+		if (!line)
 			ptr[i] = 2;
-		else if (line[i] == 'p')
-			ptr[i] = 1;
-		else if (line[i] == '1')
-			ptr[i] = 0;
 		else
-			ptr[i] = 2;
-		i++;
+			if (line[i] == 'w')
+				ptr[i + 1] = 2;
+			else if (line[i] == 'p')
+				ptr[i + 1] = 1;
+			else if (line[i] == '1')
+				ptr[i + 1] = 0;
+			else
+				ptr[i + 1] = 2;
 	}
+	//ptr[0] = 2; //try to change it for ft_init_wall
+	return (1);
 	//ft_putstr("\nstartsave_line\n");
 }

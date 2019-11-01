@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/01 18:35:22 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/01 21:50:09 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,12 @@ int					ft_map_chk(int fd, t_w *w);
 
 void				ft_put_map_man();
 void				ft_show_map(t_map *map);
-void				ft_save_line(char *line, int *ptr, int size);
+int					ft_save_line(char *line, int *ptr, int size);
 
 void				ft_sdl_error();
 void				ft_sdl_run(t_w *w);
 
 void				ft_ray(t_w *w);
-void				ft_init_rect(SDL_Rect *rect);
 void				ft_draw(t_w *w);
 
 int					ft_ui(t_w *w, SDL_Event	*e);

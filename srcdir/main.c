@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/01 18:42:27 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/01 21:24:23 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int					main(int argc, char **argv)
 	}
 	fd = ft_open(argv[1]);
 	ft_read(fd, &new_w);
-	
 	printf("\n|{after reading map we get mapsize=%d}|\n", new_w.map.size);
 	ft_show_map(&new_w.map);
 	ft_sdl_run(&new_w);
@@ -90,19 +89,3 @@ int					main(int argc, char **argv)
 	printf("\ntime_taken = %f\n", time_taken);
 	exit(0);
 }
-
-//read map
-//check map W & H
-//check symbols in map file
-//printf map man
-//save map in struct s_map
-//save struct s_map into struct s_w
-//build map
-//place player
-//catch user input
-/*
-
-
-
-
-*/
