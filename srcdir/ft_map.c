@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/31 21:09:25 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/01 18:57:11 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** **************************************************************************
 */
 
-static int		ft_map_save(char arr[MAX_MAP_H][MAX_MAP_W], t_map *map)
+static int		ft_save(char arr[MAX_MAP_H + 1][MAX_MAP_W + 1], t_map *map)
 {
 	int		i;
 
@@ -28,15 +28,15 @@ static int		ft_map_save(char arr[MAX_MAP_H][MAX_MAP_W], t_map *map)
 	{
 		if (i != 0)
 		{
-			if(!(map->dig_map[i] = (int*)malloc(sizeof(int) * 20)))
+			if(!(map->dig_map[i] = (int*)malloc(sizeof(int) * map->size)))
 			{
 				ft_putstr_fd("map malloc error #2", 2);
 				return (0);
 			}
 		}
 		else
-			if(!(map->dig_map = (int**)malloc(sizeof(int*) * 20)) || \
-			!(map->dig_map[i] = (int*)malloc(sizeof(int) * 20)))
+			if(!(map->dig_map = (int**)malloc(sizeof(int*) * map->size)) || \
+			!(map->dig_map[i] = (int*)malloc(sizeof(int) * map->size)))
 			{
 				ft_putstr_fd("map malloc error #1", 2);
 				return (0);
@@ -54,16 +54,22 @@ static int		ft_map_save(char arr[MAX_MAP_H][MAX_MAP_W], t_map *map)
 ** **************************************************************************
 */
 
-static int		ft_map_chk_exp(int len, char *line, int *size)
+static int		ft_map_chk_exp(int file_w, int file_h, char *line, t_map *map)
 {
 	int			i;
 
-	i = 0;
-	line += 0;
-	if ((len > MAX_MAP_W) || (len < MIN_MAP_W))
+	i = -1;
+	if ((file_w >= MAX_MAP_W) || (file_w <= MIN_MAP_W) || (file_h >= MAX_MAP_H))
 			return (0);
-	if (len > size[0])
-		size[0] = len;
+	if (file_w > map->size)
+		map->size = file_w + 1;
+	if (file_h > map->size)
+		map->size = file_h + 1;
+	while(++i < file_w)
+	{
+		if (line[i] == 'p')
+			map->pl += 1;
+	}
 	return (1);
 }
 
@@ -76,30 +82,28 @@ static int		ft_map_chk_exp(int len, char *line, int *size)
 
 int					ft_map_chk(int fd, t_w *w)
 {
-	char	arr[MAX_MAP_H][MAX_MAP_W];
+	char	arr[MAX_MAP_H + 1][MAX_MAP_W + 1];
 	char	*line;
-	int		res;
-	int		i;
+	int		gnl_res;
+	int		file_h;
 
-	i = 0;
-	res = 1;
-	w->map.size = 0;
-	while (i < MAX_MAP_H + 1)
+	file_h = -1;
+	gnl_res = 1;
+	//line = NULL;
+	//fd = -1;
+	while (file_h++ < MAX_MAP_H + 1)
 	{
-		if ((res = ft_get_next_line(fd, &line)) == -1)
+		if ((gnl_res = ft_get_next_line(fd, &line)) == -1)
 			ft_putstr_fd("GNL error. ", 2);
-		if (res == 0)
+		if ((gnl_res == 0) || (gnl_res == -1))
 			break ;
-		if (!ft_map_chk_exp(ft_strlen(line), line, &w->map.size))
+		if (!ft_map_chk_exp(ft_strlen(line), file_h, line, &w->map))
 			return (0);
-		ft_strcpy(arr[i], line);
-		free(line);
-		i++;
+		ft_strcpy(arr[file_h], line);
+		ft_strdel(&line);
 	}
-	if (i > w->map.size)
-		w->map.size = i;
-	if ((i > MAX_MAP_H) || (i < MIN_MAP_H) || !ft_map_save(arr, &w->map))
+	if ((file_h <= MIN_MAP_H) || (w->map.pl != 1) || !ft_save(arr, &w->map))
 		return (0);
-	ft_map_save(arr, &w->map);
-	return(1);
+	return (file_h);
+	
 }

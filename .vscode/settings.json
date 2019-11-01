@@ -16,7 +16,15 @@
         "ios": "c",
         "stdio.h": "c",
         "sdl.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "__hash_table": "c",
+        "__split_buffer": "c",
+        "bitset": "c",
+        "initializer_list": "c",
+        "memory": "c",
+        "unordered_map": "c",
+        "utility": "c",
+        "hashtable": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

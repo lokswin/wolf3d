@@ -6,7 +6,7 @@
 #    By: drafe <drafe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 20:00:16 by drafe             #+#    #+#              #
-#    Updated: 2019/10/31 21:40:03 by drafe            ###   ########.fr        #
+#    Updated: 2019/11/01 18:42:05 by drafe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRCDIR := srcdir
 
 OBJDIR := objdir
 
-OBJS := $(addprefix $(OBJDIR)/, main.o ft_map_save.o ft_map.o ft_sdl_run.o\
+OBJS := $(addprefix $(OBJDIR)/, main.o ft_save_line.o ft_map.o ft_sdl_run.o\
 	ft_ray.o ft_draw.o ft_ui.o )
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)

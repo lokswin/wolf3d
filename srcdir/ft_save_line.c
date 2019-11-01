@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_save.c                                      :+:      :+:    :+:   */
+/*   ft_save_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/31 20:08:45 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/01 18:56:13 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void		ft_save_line(char *line, int *ptr, int size)
 	int		i;
 
 	i = 0;
+	//ft_putstr("\nstartsave_line\n");
 	while (i < size)
 	{
 		if (line[i] == 'w')
@@ -85,22 +86,5 @@ void		ft_save_line(char *line, int *ptr, int size)
 			ptr[i] = 2;
 		i++;
 	}
-	line += 0;
-	ptr += 0;
+	//ft_putstr("\nstartsave_line\n");
 }
-
-/*
-	while (line[i] != '\0')
-	{
-		if (line[i] == 'w')
-			ptr[i] = 2;
-		else if (line[i] == 'p')
-			ptr[i] = 1;
-		else if (line[i] == '1')
-			ptr[i] = 0;
-		else
-			ptr[i] = 2;
-		i++;
-	}
-	
-*/

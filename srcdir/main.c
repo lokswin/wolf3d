@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/31 19:29:09 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/01 18:42:27 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,23 @@
 ** **************************************************************************
 */
 
-static void					ft_read(int fd, t_w *new_w)
+static void					ft_read(int fd, t_w *w)
 {
 	int		res;
 	int		i;
 
-	if (!ft_map_chk(fd, new_w))
+	w->map.size = 0;
+	w->map.pl = 0;
+	i = 0;
+	res = 0;
+	res = ft_map_chk(fd, w);
+	if (!res)
 	{
 		ft_put_map_man();
 		ft_putstr_fd("Map error.\n", 2);
 		exit(1);
 	}
-	i = 0;
-	res = 0;
+	
 }
 
 /*
