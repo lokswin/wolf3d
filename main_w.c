@@ -3,7 +3,7 @@
 
 
 
-int worldMap[24][24]=
+/*int worldMap[24][24]=
 {
 {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 {1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,5,0,0,0,0,0,0,0,1},
@@ -30,14 +30,14 @@ int worldMap[24][24]=
 {1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 };
+*/
 
-int main()
+int ft_engine(int **worldMap)
 {
 	d_moves m;
 	d_win dw;
 	t_w c;
 	SDL_Event event = { 0 };
-
 	config_moves(&m);
 	config_win(&dw);
 	SDL_Event e;
@@ -47,11 +47,11 @@ int main()
     {
 	if (SDL_PollEvent(&e)){if (e.type == SDL_QUIT){break;}}
 
-        for(int x = 0; x < 512; x++)
+        for(int x = 0; x < W_WIN; x++)
         {//calculate ray position and direction
 
 			struct ColorRGBA color;   //choose wall color
-			c.cameraX = 2 * x / (double)(dw.w) - 1;
+			c.cameraX = 2 * x / (double)(W_WIN) - 1;
 			c.rayDirX = m.dirX + m.planeX * c.cameraX;
 			c.rayDirY = m.dirY + m.planeY * c.cameraX;
 			c.mapX = (int)m.posX;
@@ -102,12 +102,12 @@ int main()
 			c.perpWallDist = (c.mapX - m.posX + (1 - c.stepX) / 2) / c.rayDirX;
             else
 			c.perpWallDist = (c.mapY - m.posY + (1 - c.stepY) / 2) / c.rayDirY;
-		c.lineHeight = (int)(dw.h / c.perpWallDist);//Calculate height of line to draw on screen
-		c.drawStart = -c.lineHeight / 2 + dw.h / 2; //calculate lowest and highest pixel to fill in current stripe
+		c.lineHeight = (int)(H_WIN / c.perpWallDist);//Calculate height of line to draw on screen
+		c.drawStart = -c.lineHeight / 2 + H_WIN / 2; //calculate lowest and highest pixel to fill in current stripe
             if(c.drawStart < 0)c.drawStart = 0;
-		c.drawEnd = c.lineHeight / 2 + dw.h / 2;
-            if(c.drawEnd >= dw.h)c.drawEnd = dw.h - 1;
-            if (worldMap[c.mapX][c.mapY] == 1)
+		c.drawEnd = c.lineHeight / 2 + H_WIN / 2;
+            if(c.drawEnd >= H_WIN)c.drawEnd = H_WIN - 1;
+            if (worldMap[c.mapX][c.mapY] == 5)
                 color = color_get(255,0,0,255);
             else if (worldMap[c.mapX][c.mapY] == 2)
                 color = color_get(0,255,0,255);
@@ -122,7 +122,7 @@ int main()
             verLine(x, &c, color, dw.surf);//draw the pixels of the stripe as a vertical line
         }
         redraw(&dw);
-       // cls(&dw);
+        //cls(&dw);
 		if (e.type == SDL_KEYDOWN)
 			ft_ui(&e, &m, worldMap);
     }

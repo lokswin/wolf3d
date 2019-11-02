@@ -57,9 +57,22 @@ include CMakeFiles/untitled7.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/untitled7.dir/flags.make
 
+CMakeFiles/untitled7.dir/main.c.o: CMakeFiles/untitled7.dir/flags.make
+CMakeFiles/untitled7.dir/main.c.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled7.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/main.c.o   -c /Users/nshelly/CLionProjects/untitled7/main.c
+
+CMakeFiles/untitled7.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled7.dir/main.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/main.c > CMakeFiles/untitled7.dir/main.c.i
+
+CMakeFiles/untitled7.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/main.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/main.c -o CMakeFiles/untitled7.dir/main.c.s
+
 CMakeFiles/untitled7.dir/main_w.c.o: CMakeFiles/untitled7.dir/flags.make
 CMakeFiles/untitled7.dir/main_w.c.o: ../main_w.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled7.dir/main_w.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled7.dir/main_w.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/main_w.c.o   -c /Users/nshelly/CLionProjects/untitled7/main_w.c
 
 CMakeFiles/untitled7.dir/main_w.c.i: cmake_force
@@ -70,9 +83,35 @@ CMakeFiles/untitled7.dir/main_w.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/main_w.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/main_w.c -o CMakeFiles/untitled7.dir/main_w.c.s
 
+CMakeFiles/untitled7.dir/sources/ft_save_line.c.o: CMakeFiles/untitled7.dir/flags.make
+CMakeFiles/untitled7.dir/sources/ft_save_line.c.o: ../sources/ft_save_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled7.dir/sources/ft_save_line.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/ft_save_line.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/ft_save_line.c
+
+CMakeFiles/untitled7.dir/sources/ft_save_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled7.dir/sources/ft_save_line.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/sources/ft_save_line.c > CMakeFiles/untitled7.dir/sources/ft_save_line.c.i
+
+CMakeFiles/untitled7.dir/sources/ft_save_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/sources/ft_save_line.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/sources/ft_save_line.c -o CMakeFiles/untitled7.dir/sources/ft_save_line.c.s
+
+CMakeFiles/untitled7.dir/sources/ft_map.c.o: CMakeFiles/untitled7.dir/flags.make
+CMakeFiles/untitled7.dir/sources/ft_map.c.o: ../sources/ft_map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled7.dir/sources/ft_map.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/ft_map.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/ft_map.c
+
+CMakeFiles/untitled7.dir/sources/ft_map.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled7.dir/sources/ft_map.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nshelly/CLionProjects/untitled7/sources/ft_map.c > CMakeFiles/untitled7.dir/sources/ft_map.c.i
+
+CMakeFiles/untitled7.dir/sources/ft_map.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled7.dir/sources/ft_map.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nshelly/CLionProjects/untitled7/sources/ft_map.c -o CMakeFiles/untitled7.dir/sources/ft_map.c.s
+
 CMakeFiles/untitled7.dir/sources/ft_ui.c.o: CMakeFiles/untitled7.dir/flags.make
 CMakeFiles/untitled7.dir/sources/ft_ui.c.o: ../sources/ft_ui.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled7.dir/sources/ft_ui.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled7.dir/sources/ft_ui.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/ft_ui.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/ft_ui.c
 
 CMakeFiles/untitled7.dir/sources/ft_ui.c.i: cmake_force
@@ -85,7 +124,7 @@ CMakeFiles/untitled7.dir/sources/ft_ui.c.s: cmake_force
 
 CMakeFiles/untitled7.dir/sources/config.c.o: CMakeFiles/untitled7.dir/flags.make
 CMakeFiles/untitled7.dir/sources/config.c.o: ../sources/config.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled7.dir/sources/config.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/untitled7.dir/sources/config.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/config.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/config.c
 
 CMakeFiles/untitled7.dir/sources/config.c.i: cmake_force
@@ -98,7 +137,7 @@ CMakeFiles/untitled7.dir/sources/config.c.s: cmake_force
 
 CMakeFiles/untitled7.dir/sources/draw.c.o: CMakeFiles/untitled7.dir/flags.make
 CMakeFiles/untitled7.dir/sources/draw.c.o: ../sources/draw.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled7.dir/sources/draw.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/untitled7.dir/sources/draw.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/draw.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/draw.c
 
 CMakeFiles/untitled7.dir/sources/draw.c.i: cmake_force
@@ -111,7 +150,7 @@ CMakeFiles/untitled7.dir/sources/draw.c.s: cmake_force
 
 CMakeFiles/untitled7.dir/sources/screen.c.o: CMakeFiles/untitled7.dir/flags.make
 CMakeFiles/untitled7.dir/sources/screen.c.o: ../sources/screen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled7.dir/sources/screen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/untitled7.dir/sources/screen.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled7.dir/sources/screen.c.o   -c /Users/nshelly/CLionProjects/untitled7/sources/screen.c
 
 CMakeFiles/untitled7.dir/sources/screen.c.i: cmake_force
@@ -124,7 +163,10 @@ CMakeFiles/untitled7.dir/sources/screen.c.s: cmake_force
 
 # Object files for target untitled7
 untitled7_OBJECTS = \
+"CMakeFiles/untitled7.dir/main.c.o" \
 "CMakeFiles/untitled7.dir/main_w.c.o" \
+"CMakeFiles/untitled7.dir/sources/ft_save_line.c.o" \
+"CMakeFiles/untitled7.dir/sources/ft_map.c.o" \
 "CMakeFiles/untitled7.dir/sources/ft_ui.c.o" \
 "CMakeFiles/untitled7.dir/sources/config.c.o" \
 "CMakeFiles/untitled7.dir/sources/draw.c.o" \
@@ -133,7 +175,10 @@ untitled7_OBJECTS = \
 # External object files for target untitled7
 untitled7_EXTERNAL_OBJECTS =
 
+untitled7: CMakeFiles/untitled7.dir/main.c.o
 untitled7: CMakeFiles/untitled7.dir/main_w.c.o
+untitled7: CMakeFiles/untitled7.dir/sources/ft_save_line.c.o
+untitled7: CMakeFiles/untitled7.dir/sources/ft_map.c.o
 untitled7: CMakeFiles/untitled7.dir/sources/ft_ui.c.o
 untitled7: CMakeFiles/untitled7.dir/sources/config.c.o
 untitled7: CMakeFiles/untitled7.dir/sources/draw.c.o
@@ -141,7 +186,7 @@ untitled7: CMakeFiles/untitled7.dir/sources/screen.c.o
 untitled7: CMakeFiles/untitled7.dir/build.make
 untitled7: ../libft/libft.a
 untitled7: CMakeFiles/untitled7.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable untitled7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable untitled7"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled7.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

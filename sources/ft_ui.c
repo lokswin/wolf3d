@@ -19,7 +19,7 @@
 ** **************************************************************************
 */
 
-int			ft_ui(SDL_Event	*e, d_moves *m, int wmap[24][24])
+int			ft_ui(SDL_Event	*e, d_moves *m, int **wmap)
 {
 	double moveSpeed = 0.064;//frameTime * 5.0; //the constant value is in squares/second
 	double rotSpeed = 0.05; //the constant value is in radians/second

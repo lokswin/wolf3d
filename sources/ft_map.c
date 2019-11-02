@@ -6,48 +6,74 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/29 16:50:10 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/02 18:15:33 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
+
 /*
 ** **************************************************************************
-**	static void ft_map_chk_p2(int len, char *line)
-**	Second function to check user map symbols
+**	static int ft_map_save(int	ln_nb, char *line, t_map *map)
+**	Function to save map
 ** **************************************************************************
 */
 
-static int		ft_map_chk_exp(int len, char *line)
+static int		ft_save(char arr[MAX_MAP_H + 3][MAX_MAP_W + 3], t_map *map)
 {
-	int			i;
+	int		i;
 
-	i = 0;
-	line += 0;
-	if ((len > MAX_MAP_W) || (len < MIN_MAP_W))
-			return (0);
-	while (i < len)
+	i = -1;
+	while(++i < map->size)
 	{
-		if (line[i] != 'w')
-			return (0);
-		i++;
+		if (i != 0)
+		{
+			if(!(map->dig_map[i] = (int*)malloc(sizeof(int) * map->size)))
+			{
+				ft_putstr_fd("map malloc error #2", 2);
+				return (0);
+			}
+			ft_save_line(arr[i - 1], map->dig_map[i], map->size);
+		}
+		else
+		{
+			if(!(map->dig_map = (int**)malloc(sizeof(int*) * map->size)) || \
+			!(map->dig_map[i] = (int*)malloc(sizeof(int) * map->size)))
+			{
+				ft_putstr_fd("map malloc error #1", 2);
+				return (0);
+			}
+			ft_save_line(NULL, map->dig_map[0], map->size);
+		}
+			
 	}
 	return (1);
 }
 
 /*
 ** **************************************************************************
-**	static void ft_map_save(char *line, t_map map)
-**	Function to save map
+**	static int ft_map_chk_exp(int len, char *line)
+**	Second function to check user map symbols
 ** **************************************************************************
 */
 
-static int		ft_map_save(int len, char *line, t_map *map)
+static int		ft_map_chk_exp(int file_w, int file_h, char *line, t_map *map)
 {
-	if (!ft_map_chk_exp(len, line))
+	int			i;
+
+	i = -1;
+	if ((file_w >= MAX_MAP_W) || (file_w <= MIN_MAP_W) || (file_h >= MAX_MAP_H - 1))
 		return (0);
-	line += 0;
-	map->size = len;
+	
+	if (file_w > map->size)
+		map->size = file_w + 3;
+	if (file_h > map->size)
+		map->size = file_h + 3;
+	while(++i < file_w)
+	{
+		if (line[i] == 'p')
+			map->pl += 1;
+	}
 	return (1);
 }
 
@@ -60,44 +86,28 @@ static int		ft_map_save(int len, char *line, t_map *map)
 
 int					ft_map_chk(int fd, t_w *w)
 {
+	char	arr[MAX_MAP_H + 3][MAX_MAP_W + 3];
 	char	*line;
-	int		res;
-	int		i;
+	int		gnl_res;
+	int		file_h;
 
-	i = 0;
-	res = 1;
-	while (i < MAX_MAP_H + 1)
+	file_h = -1;
+	gnl_res = 1;
+	//line = NULL;
+	//fd = -1;
+	while (file_h++ < MAX_MAP_H + 1)
 	{
-		res = ft_get_next_line(fd, &line);
-		if (res == -1)
+		if ((gnl_res = ft_get_next_line(fd, &line)) == -1)
 			ft_putstr_fd("GNL error. ", 2);
-		if (res == 0)
+		if ((gnl_res == 0) || (gnl_res == -1))
 			break ;
-		if (!ft_map_save(ft_strlen(line), line, &w->map))
+		if (!ft_map_chk_exp(ft_strlen(line), file_h, line, &w->map))
 			return (0);
+		ft_strcpy(arr[file_h], line);
 		ft_strdel(&line);
-		i++;
 	}
-	if (i > MAX_MAP_H || i < MIN_MAP_H)
+	if ((file_h <= MIN_MAP_H) || (w->map.pl != 1) || !ft_save(arr, &w->map))
 		return (0);
-	return(1);
-}
-
-/*
-** **************************************************************************
-**	void ft_put_map_man()
-**	Function to print map man
-** **************************************************************************
-*/
-
-void				ft_put_map_man()
-{
-	ft_putstr("usage ./wolf3d ./maps/map.wolf3d:\n\
-	\n\tMap width - [4-50]\n\
-	Map height - [4-50]\n\
-	w - wall block\n\
-	o1 - objects[1-4]\n\
-	1 - empty blocks with floor and ceiling[1-4]\n\
-	p - player\n\
-	\n");
+	return (file_h);
+	
 }

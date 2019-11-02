@@ -123,6 +123,33 @@ untitled7/fast:
 	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/build
 .PHONY : untitled7/fast
 
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/main.c.s
+.PHONY : main.c.s
+
 main_w.o: main_w.c.o
 
 .PHONY : main_w.o
@@ -204,6 +231,60 @@ sources/draw.c.s:
 	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/draw.c.s
 .PHONY : sources/draw.c.s
 
+sources/ft_map.o: sources/ft_map.c.o
+
+.PHONY : sources/ft_map.o
+
+# target to build an object file
+sources/ft_map.c.o:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_map.c.o
+.PHONY : sources/ft_map.c.o
+
+sources/ft_map.i: sources/ft_map.c.i
+
+.PHONY : sources/ft_map.i
+
+# target to preprocess a source file
+sources/ft_map.c.i:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_map.c.i
+.PHONY : sources/ft_map.c.i
+
+sources/ft_map.s: sources/ft_map.c.s
+
+.PHONY : sources/ft_map.s
+
+# target to generate assembly for a file
+sources/ft_map.c.s:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_map.c.s
+.PHONY : sources/ft_map.c.s
+
+sources/ft_save_line.o: sources/ft_save_line.c.o
+
+.PHONY : sources/ft_save_line.o
+
+# target to build an object file
+sources/ft_save_line.c.o:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_save_line.c.o
+.PHONY : sources/ft_save_line.c.o
+
+sources/ft_save_line.i: sources/ft_save_line.c.i
+
+.PHONY : sources/ft_save_line.i
+
+# target to preprocess a source file
+sources/ft_save_line.c.i:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_save_line.c.i
+.PHONY : sources/ft_save_line.c.i
+
+sources/ft_save_line.s: sources/ft_save_line.c.s
+
+.PHONY : sources/ft_save_line.s
+
+# target to generate assembly for a file
+sources/ft_save_line.c.s:
+	$(MAKE) -f CMakeFiles/untitled7.dir/build.make CMakeFiles/untitled7.dir/sources/ft_save_line.c.s
+.PHONY : sources/ft_save_line.c.s
+
 sources/ft_ui.o: sources/ft_ui.c.o
 
 .PHONY : sources/ft_ui.o
@@ -267,6 +348,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... untitled7"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... main_w.o"
 	@echo "... main_w.i"
 	@echo "... main_w.s"
@@ -276,6 +360,12 @@ help:
 	@echo "... sources/draw.o"
 	@echo "... sources/draw.i"
 	@echo "... sources/draw.s"
+	@echo "... sources/ft_map.o"
+	@echo "... sources/ft_map.i"
+	@echo "... sources/ft_map.s"
+	@echo "... sources/ft_save_line.o"
+	@echo "... sources/ft_save_line.i"
+	@echo "... sources/ft_save_line.s"
 	@echo "... sources/ft_ui.o"
 	@echo "... sources/ft_ui.i"
 	@echo "... sources/ft_ui.s"

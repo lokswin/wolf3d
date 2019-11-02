@@ -86,6 +86,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/nshelly/CLionProjects/untitled7/main.c">
+			<Option target="untitled7"/>
+		</Unit>
 		<Unit filename="/Users/nshelly/CLionProjects/untitled7/main_w.c">
 			<Option target="untitled7"/>
 		</Unit>
@@ -93,6 +96,12 @@
 			<Option target="untitled7"/>
 		</Unit>
 		<Unit filename="/Users/nshelly/CLionProjects/untitled7/sources/draw.c">
+			<Option target="untitled7"/>
+		</Unit>
+		<Unit filename="/Users/nshelly/CLionProjects/untitled7/sources/ft_map.c">
+			<Option target="untitled7"/>
+		</Unit>
+		<Unit filename="/Users/nshelly/CLionProjects/untitled7/sources/ft_save_line.c">
 			<Option target="untitled7"/>
 		</Unit>
 		<Unit filename="/Users/nshelly/CLionProjects/untitled7/sources/ft_ui.c">

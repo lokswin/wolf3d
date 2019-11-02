@@ -12,9 +12,9 @@ void screen(d_win *dw)
 		exit(1);
 	}
 	if (dw->fullscreen == 1)
-		dw->sdl_win = SDL_CreateWindow("wolf project", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, dw->w, dw->h, SDL_WINDOW_FULLSCREEN | SDL_WINDOW_OPENGL);
+		dw->sdl_win = SDL_CreateWindow("wolf project", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, W_WIN, H_WIN, SDL_WINDOW_FULLSCREEN | SDL_WINDOW_OPENGL);
 	else
-		dw->sdl_win = SDL_CreateWindow("wolf project", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, dw->w, dw->h, SDL_WINDOW_OPENGL);
+		dw->sdl_win = SDL_CreateWindow("wolf project", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, W_WIN, H_WIN, SDL_WINDOW_OPENGL);
 	if (dw->sdl_win == NULL)
 	{
 		printf("Unable to set video: %s\n", SDL_GetError());
@@ -28,7 +28,7 @@ void screen(d_win *dw)
 		SDL_Quit();
 		exit(1);
 	}
-	dw->surf = SDL_CreateRGBSurface(0, dw->w, dw->h, 32,
+	dw->surf = SDL_CreateRGBSurface(0, W_WIN, H_WIN, 32,
 								0xFF000000,
 								0x00FF0000,
 								0x0000FF00,
@@ -39,7 +39,7 @@ void screen(d_win *dw)
 		SDL_Quit();
 		exit(1);
 	}
-	dw->texture = SDL_CreateTexture(dw->render, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, dw->w, dw->h);
+	dw->texture = SDL_CreateTexture(dw->render, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, W_WIN, H_WIN);
 	if (dw->texture == NULL)
 	{
 		printf("Unable to set texture: %s\n", SDL_GetError());

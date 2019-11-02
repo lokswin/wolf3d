@@ -12,11 +12,10 @@
 
 #ifndef CONSTANTS_H
 # define CONSTANTS_H
-# define APP_SHORT_NAME "vulkansamples_instance"
 # define GLM_FORCE_RADIANS
 # define GLM_FORCE_DEPTH_ZERO_TO_ONE
 # define W_WIN 800
-# define H_WIN 800
+# define H_WIN 600
 # define WALL_SIZE 64
 # define MAX_MAP_H 50
 # define MIN_MAP_H 4

@@ -10,17 +10,18 @@ void redraw(d_win *w)
 
 void cls(d_win *w)
 {
+	SDL_UpdateTexture(w->texture, NULL, w->surf->pixels, w->surf->pitch);
 	SDL_SetRenderDrawColor(w->render, 255, 0, 0, 255);
 	SDL_RenderClear(w->render);
 	SDL_RenderPresent(w->render);
-	SDL_Delay(5);
+	//SDL_Delay(5);
 
 }
 
 int	verLine(int x, t_w *c, struct ColorRGBA color, SDL_Surface	*surf)//Fast vertical line from (x,y1) to (x,y2), with rgb color
 {
-	int w = 512;
-	int h = 384;
+	int w = W_WIN;
+	int h = H_WIN;
 	int y1;
 	int y2;
 	y1 = c->drawStart;

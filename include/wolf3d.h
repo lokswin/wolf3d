@@ -47,7 +47,11 @@ typedef struct		s_cross
 
 typedef struct		s_map
 {
+	int				**dig_map;
 	int				size;
+	int				pl;
+	int				pl_x;
+	int				pl_y;
 }					t_map;
 
 /*
@@ -109,15 +113,13 @@ SDL_Window		*sdl_win;
 SDL_Surface		*surf;
 SDL_Renderer	*render;
 SDL_Texture* 	texture;
-int				w;
-int 			h;
 int 			fullscreen;
 SDL_PixelFormat *pix;
 }		d_win;
 
 typedef struct data_moves
 {
-int wmap[24][24];
+int **wmap;
 double posX;
 double posY;
 double planeX;
@@ -140,6 +142,9 @@ int a;
 int					ft_map_chk(int fd, t_w *w);
 void				ft_put_map_man();
 
+void				ft_show_map(t_map *map);
+int					ft_save_line(char *line, int *ptr, int size);
+
 void				ft_sdl_error();
 void				ft_sdl_run(t_w *w);
 
@@ -155,7 +160,7 @@ void			ft_sdl_hook();
 ** --------------ft_ui.c--------------
 */
 
-int			ft_ui(SDL_Event	*e, d_moves *m, int wmap[24][24]);
+int			ft_ui(SDL_Event	*e, d_moves *m, int **wmap);
 /*
 ** --------------screen.c--------------
 */
@@ -178,6 +183,8 @@ void redraw(d_win *w);//update, redraw
 void cls(d_win *w);//clear, NOT WORKING, need to check how to correct clear window
 
 
+
+int ft_engine(int **worldMap);
 
 /*
 include path

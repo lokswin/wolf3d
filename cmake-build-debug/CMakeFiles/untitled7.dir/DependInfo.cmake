@@ -4,9 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/nshelly/CLionProjects/untitled7/main.c" "/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir/main.c.o"
   "/Users/nshelly/CLionProjects/untitled7/main_w.c" "/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir/main_w.c.o"
   "/Users/nshelly/CLionProjects/untitled7/sources/config.c" "/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir/sources/config.c.o"
   "/Users/nshelly/CLionProjects/untitled7/sources/draw.c" "/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir/sources/draw.c.o"
+  "/Users/nshelly/CLionProjects/untitled7/sources/ft_map.c" "/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir/sources/ft_map.c.o"
+  "/Users/nshelly/CLionProjects/untitled7/sources/ft_save_line.c" "/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir/sources/ft_save_line.c.o"
   "/Users/nshelly/CLionProjects/untitled7/sources/ft_ui.c" "/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir/sources/ft_ui.c.o"
   "/Users/nshelly/CLionProjects/untitled7/sources/screen.c" "/Users/nshelly/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir/sources/screen.c.o"
   )
