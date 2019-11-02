@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/01 21:50:09 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/02 17:02:09 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ typedef struct		s_map
 	int				**dig_map;
 	int				size;
 	int				pl;
+	int				pl_x;
+	int				pl_y;
 }					t_map;
 
 /*

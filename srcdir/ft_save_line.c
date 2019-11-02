@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/01 21:53:37 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/02 18:17:35 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 ** **************************************************************************
 */
 
-void		ft_show_map(t_map *map)
+void			ft_show_map(t_map *map)
 {
-	int		i;
-	int		j;
+	int			i;
+	int			j;
 
 	i = 0;
 	j = 0;
-	printf("\n\n\tPRINT MAP  map_size=%d\n", map->size);
+	printf("\n\tPRINT MAP  map_size=%d\n", map->size);
 	while(i < map->size)
 	{
 		j = 0;
-		printf("|map[%d]", i);
+		printf("map[%d]	|", i);
 		while(j < map->size)
 		{
 			printf("%d|", map->dig_map[i][j]);
@@ -39,7 +39,7 @@ void		ft_show_map(t_map *map)
 		printf("\n");
 		i++;
 	}
-	printf("\n\n\tmap printed\n");
+	printf("\n\tmap printed\n");
 }
 
 /*
@@ -87,28 +87,31 @@ static void		ft_init_wall(int *ptr, int size)
 ** **************************************************************************
 */
 
-int		ft_save_line(char *line, int *ptr, int size)
+int				ft_save_line(char *line, int *ptr, int size)
 {
-	int		i;
+	int			i;
 
 	i = -1;
-	ft_init_wall(ptr, size);
 	//ft_putstr("\nstartsave_line\n");
+	ft_init_wall(ptr, size);
 	while (++i < size)
 	{
 		if (!line)
 			ptr[i] = 2;
 		else
+		{
+			if (line[i] == '\0')
+				break ;
 			if (line[i] == 'w')
 				ptr[i + 1] = 2;
 			else if (line[i] == 'p')
 				ptr[i + 1] = 1;
 			else if (line[i] == '1')
 				ptr[i + 1] = 0;
-			else
-				ptr[i + 1] = 2;
+		}
+		
 	}
-	//ptr[0] = 2; //try to change it for ft_init_wall
+	
 	return (1);
 	//ft_putstr("\nstartsave_line\n");
 }

@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/31 18:07:03 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/02 17:31:36 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void				ft_sdl_run(t_w *w)
 		ft_sdl_error();
 	if (SDL_UpdateWindowSurface(w->sdl_win) != 0)//update window after draw rectangle
 		ft_sdl_error();
-	ft_ray(w);
+	//ft_ray(w);
 	ft_sdl_hook(w);
 	SDL_DestroyWindow(w->sdl_win);
 	SDL_Quit();

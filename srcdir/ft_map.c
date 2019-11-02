@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/01 21:40:25 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/02 18:15:33 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** **************************************************************************
 */
 
-static int		ft_save(char arr[MAX_MAP_H + 2][MAX_MAP_W + 2], t_map *map)
+static int		ft_save(char arr[MAX_MAP_H + 3][MAX_MAP_W + 3], t_map *map)
 {
 	int		i;
 
@@ -62,12 +62,13 @@ static int		ft_map_chk_exp(int file_w, int file_h, char *line, t_map *map)
 	int			i;
 
 	i = -1;
-	if ((file_w >= MAX_MAP_W) || (file_w <= MIN_MAP_W) || (file_h >= MAX_MAP_H))
-			return (0);
+	if ((file_w >= MAX_MAP_W) || (file_w <= MIN_MAP_W) || (file_h >= MAX_MAP_H - 1))
+		return (0);
+	
 	if (file_w > map->size)
-		map->size = file_w + 2;
+		map->size = file_w + 3;
 	if (file_h > map->size)
-		map->size = file_h + 2;
+		map->size = file_h + 3;
 	while(++i < file_w)
 	{
 		if (line[i] == 'p')
@@ -85,7 +86,7 @@ static int		ft_map_chk_exp(int file_w, int file_h, char *line, t_map *map)
 
 int					ft_map_chk(int fd, t_w *w)
 {
-	char	arr[MAX_MAP_H + 2][MAX_MAP_W + 2];
+	char	arr[MAX_MAP_H + 3][MAX_MAP_W + 3];
 	char	*line;
 	int		gnl_res;
 	int		file_h;
