@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/10/30 13:46:38 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/03 18:52:15 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,13 @@ typedef struct		s_map
 {
 	int				**dig_map;
 	int				size;
-	int				pl;
-	int				pl_x;
-	int				pl_y;
+	double			pl;
+	double			p_x;
+	double			p_y;
+	double			p_dir_x;
+	double			p_dir_y;
+	double			p_plane_x;
+	double			p_plane_y;
 }					t_map;
 
 /*
@@ -160,31 +164,31 @@ void			ft_sdl_hook();
 ** --------------ft_ui.c--------------
 */
 
-int			ft_ui(SDL_Event	*e, d_moves *m, int **wmap);
+int			ft_ui(SDL_Event	*e, d_moves *m, t_w *w);
 /*
 ** --------------screen.c--------------
 */
 
-void screen(struct data_win *dw);
+void		screen(struct data_win *dw);
 
 /*
 ** -------------config.c--------------
 */
-void config_moves(d_moves *m);
-void config_win(struct data_win *dw);
+void		config_moves(d_moves *m, t_w *w);
+void		config_win(struct data_win *dw);
 
 
 /*
 ** --------------draw.c--------------
 */
-color_rgb color_get(int r, int g, int b, int a);
-int	verLine(int x, t_w *c, struct ColorRGBA color, SDL_Surface	*surf);//draw vertical lines
-void redraw(d_win *w);//update, redraw
-void cls(d_win *w);//clear, NOT WORKING, need to check how to correct clear window
+color_rgb	color_get(int r, int g, int b, int a);
+int			verLine(int x, t_w *c, struct ColorRGBA color, SDL_Surface	*surf);//draw vertical lines
+void		redraw(d_win *w);//update, redraw
+void		cls(d_win *w);//clear, NOT WORKING, need to check how to correct clear window
 
 
 
-int ft_engine(int **worldMap);
+int			ft_engine(t_w *w);
 
 /*
 include path

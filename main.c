@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/02 17:31:17 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/03 16:12:37 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,8 @@ int					main(int argc, char **argv)
 	}
 	fd = ft_open(argv[1]);
 	ft_read(fd, &new_w);
-	//printf("\n|{after reading map we get mapsize=%d}|\n", new_w.map.size);
 	ft_show_map(&new_w.map);
-	ft_engine(new_w.map.dig_map);
+	ft_engine(&new_w);
 	//ft_sdl_run(&new_w);
 	t = clock() - t;
 	time_taken = (double)t / CLOCKS_PER_SEC;
