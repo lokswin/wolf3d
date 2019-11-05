@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/03 15:41:23 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/02 18:15:33 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,7 @@ static int		ft_map_chk_exp(int file_w, int file_h, char *line, t_map *map)
 	while(++i < file_w)
 	{
 		if (line[i] == 'p')
-		{
 			map->pl += 1;
-			map->pl_x = file_h;
-			map->pl_y = i;
-		}	
 	}
 	return (1);
 }

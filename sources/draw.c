@@ -1,45 +1,51 @@
 #include "wolf3d.h"
 
-void redraw(d_win *w)
+void redraw(d_win *dw)
 {
-	SDL_UpdateTexture(w->texture, NULL, w->surf->pixels, w->surf->pitch);
-	SDL_RenderClear(w->render);
-	SDL_RenderCopy(w->render, w->texture, NULL, NULL);
-	SDL_RenderPresent(w->render);
+    SDL_Texture *newTexture;
+    SDL_Surface *surface_render;
+    //SDL_SetRenderDrawColor(dw->render, 0, 0, 0, 255);
+    //SDL_UpdateTexture(dw->texture, NULL, dw->isurf->pixels, dw->isurf->pitch);
+    //SDL_RenderCopy(dw->render, dw->texture, NULL, NULL);
+   // SDL_RenderClear(dw->render);
+
+    //surface_render = SDL_LoadBMP("wolfwall/WALL8.bmp");
+    //newTexture = SDL_CreateTextureFromSurface(dw->render, surface_render);
+    //SDL_RenderCopy(dw->render, newTexture, NULL, NULL);
+    //SDL_RenderPresent(dw->render);
+
+
+    SDL_UpdateTexture(dw->texture, NULL, dw->surf->pixels, dw->surf->pitch);
+    SDL_RenderCopy(dw->render, dw->texture, NULL, NULL);
+    SDL_RenderPresent(dw->render);
 }
 
-void cls(d_win *w)
-{
-	SDL_UpdateTexture(w->texture, NULL, w->surf->pixels, w->surf->pitch);
-	SDL_SetRenderDrawColor(w->render, 255, 0, 0, 255);
-	SDL_RenderClear(w->render);
-	SDL_RenderPresent(w->render);
-	//SDL_Delay(5);
-
-}
-
-int	verLine(int x, t_w *c, struct ColorRGBA color, SDL_Surface	*surf)//Fast vertical line from (x,y1) to (x,y2), with rgb color
+int	verLine(int x, t_w *c, color_rgb color, d_win *dw)//Fast vertical line from (x,y1) to (x,y2), with rgb color
 {
 	int w = W_WIN;
 	int h = H_WIN;
-	int y1;
-	int y2;
-	y1 = c->drawStart;
-	y2 = c->drawEnd;
+    int * bufp;
 
-	if (y2 < y1) { y1 += y2; y2 = y1 - y2; y1 -= y2; } //swap y1 and y2
-	if (y2 < 0 || y1 >= h || x < 0 || x >= w) return 0; //no single point of the line is on screen
-	if (y1 < 0) y1 = 0; //clip
-	if (y2 >= w) y2 = h - 1; //clip
+	if (c->drawEnd < c->drawStart)
+	{
+        c->drawStart += c->drawEnd;;
+        c->drawEnd = c->drawStart - c->drawEnd;;
+        c->drawStart -= c->drawEnd;;
+	} //swap y1 and c->drawEnd;
+	if (c->drawEnd < 0 || c->drawStart >= h || x < 0 || x >= w)
+	    return 0; //no single point of the line is on screen
+	if (c->drawStart < 0)
+	    c->drawStart = 0; //clip
+	if (c->drawEnd >= w)
+	    c->drawEnd = h - 1; //clip
 
-	int colorSDL = SDL_MapRGBA(c->pix, color.r, color.g, color.b, color.a);
-	int * bufp;
+	int colorSDL = SDL_MapRGBA(dw->pix, color.r, color.g, color.b, color.a);
 
-	bufp = (int*)surf->pixels + y1 * surf->pitch / 4 + x;
-	for (int y = y1; y <= y2; y++)
+	bufp = (int*)dw->surf->pixels + c->drawStart * dw->surf->pitch / 4 + x;
+	for (int y = c->drawStart; y <= c->drawEnd; y++)
 	{
 		*bufp = colorSDL;
-		bufp += surf->pitch / 4;
+		bufp += dw->surf->pitch / 4;
 	}
 	return 1;
 }

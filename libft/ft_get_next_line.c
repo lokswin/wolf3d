@@ -67,9 +67,7 @@ int			ft_gnl_read(const int fd, char **s)
 int					ft_get_next_line(const int fd, char **line)
 {
 	static char		*output_line[10240];
-	char			*ptr;
 
-	ptr = NULL;
 	if ((fd < 0) || (!line) || (fd > 10240))
 		return (-1);
 	if (output_line[fd] == NULL)

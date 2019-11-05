@@ -15,7 +15,6 @@
 # include "libft.h"
 # include "keys.h"
 # include "constants.h"
-
 # include <SDL2/SDL.h>
 # include <math.h>
 # include <pthread.h>
@@ -115,6 +114,7 @@ SDL_Renderer	*render;
 SDL_Texture* 	texture;
 int 			fullscreen;
 SDL_PixelFormat *pix;
+SDL_Surface     *isurf;
 }		d_win;
 
 typedef struct data_moves
@@ -178,11 +178,8 @@ void config_win(struct data_win *dw);
 ** --------------draw.c--------------
 */
 color_rgb color_get(int r, int g, int b, int a);
-int	verLine(int x, t_w *c, struct ColorRGBA color, SDL_Surface	*surf);//draw vertical lines
+int	verLine(int x, t_w *c, color_rgb color, d_win *dw);//draw vertical lines
 void redraw(d_win *w);//update, redraw
-void cls(d_win *w);//clear, NOT WORKING, need to check how to correct clear window
-
-
 
 int ft_engine(int **worldMap);
 

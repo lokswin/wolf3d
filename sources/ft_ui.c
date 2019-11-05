@@ -31,24 +31,29 @@ int			ft_ui(SDL_Event	*e, d_moves *m, int **wmap)
 	if ((e->key.keysym.sym == SDLK_UP) || (e->key.keysym.sym == SDLK_w))
 	{
 		printf("move up\n");
-		if(wmap[(int)(m->posX + m->dirX * moveSpeed)][(int)(m->posY)] == 0) m->posX += m->dirX * moveSpeed;
-		if(wmap[(int)(m->posX)][(int)(m->posY + m->dirY * moveSpeed)] == 0) m->posY += m->dirY * moveSpeed;
+		if(wmap[(int)(m->posX + m->dirX * moveSpeed)][(int)(m->posY)] == 0)
+		    m->posX += m->dirX * moveSpeed;
+		if(wmap[(int)(m->posX)][(int)(m->posY + m->dirY * moveSpeed)] == 0)
+		    m->posY += m->dirY * moveSpeed;
 	}
 	if ((e->key.keysym.sym == SDLK_DOWN) || (e->key.keysym.sym == SDLK_s))
 	{
 		printf("move down\n");
-		if(wmap[(int)(m->posX - m->dirX * moveSpeed)][(int)(m->posY)] == 0) m->posX -= m->dirX * moveSpeed;
-		if(wmap[(int)(m->posX)][(int)(m->posY - m->dirY * moveSpeed)] == 0) m->posY -= m->dirY * moveSpeed;
+		if(wmap[(int)(m->posX - m->dirX * moveSpeed)][(int)(m->posY)] == 0)
+		    m->posX -= m->dirX * moveSpeed;
+		if(wmap[(int)(m->posX)][(int)(m->posY - m->dirY * moveSpeed)] == 0)
+		    m->posY -= m->dirY * moveSpeed;
 	}
 	if ((e->key.keysym.sym == SDLK_RIGHT) || (e->key.keysym.sym == SDLK_d))//NOT WORKING, need to check formula
 	{
 		printf("move right\n");
 		double oldDirX = m->dirX;
-		m->dirX = m->dirX * cos(rotSpeed) - m->dirY * sin(-rotSpeed);
-		m->dirY = oldDirX * sin(rotSpeed) + m->dirY * cos(-rotSpeed);
+		m->dirX = m->dirX * cos(-rotSpeed) - m->dirY * sin(-rotSpeed);
+		m->dirY = oldDirX * sin(-rotSpeed) + m->dirY * cos(-rotSpeed);
 		double oldPlaneX = m->planeX;
-		m->planeX = m->planeX * cos(rotSpeed) - m->planeY * sin(-rotSpeed);
-		m->planeY = oldPlaneX * sin(rotSpeed) + m->planeY * cos(-rotSpeed);
+		m->planeX = m->planeX * cos(-rotSpeed) - m->planeY * sin(-rotSpeed);
+		m->planeY = oldPlaneX * sin(-rotSpeed) + m->planeY * cos(-rotSpeed);
+
 	}
 	if ((e->key.keysym.sym == SDLK_LEFT) || (e->key.keysym.sym == SDLK_a))
 	{
