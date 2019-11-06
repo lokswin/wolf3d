@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/03 18:52:15 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/06 21:23:59 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "constants.h"
 
 # include <SDL2/SDL.h>
+# include <SDL2/SDL_image.h>
 # include <math.h>
 # include <pthread.h>
 # include <fcntl.h>
@@ -25,18 +26,11 @@
 # define deg_to_rad(degs) ((degs) * M_PI / 180.0)
 # define rad_to_deg(rads) ((rads) * 180.0 / M_PI)
 
-/*
-** **************************************************************************
-**	typedef struct s_cross
-**	Structure for store one ray intersection
-** **************************************************************************
-*/
-
-typedef struct		s_cross
+typedef struct		s_text_buff
 {
-	int				x;
-	int				y;
-}					t_cross;
+	void			(*ft_load)(void);
+	void			(*draw)(void);
+}					t_text_buff;
 
 /*
 ** **************************************************************************
@@ -58,6 +52,16 @@ typedef struct		s_map
 	double			p_plane_y;
 }					t_map;
 
+typedef struct 		data_win
+{
+	SDL_Window		*sdl_win;
+	SDL_Surface		*surf;
+//	SDL_Surface		*isurf;
+	SDL_Renderer	*render;
+	SDL_Texture 	*texture;
+	SDL_PixelFormat *pix;
+}					d_win;
+
 /*
 ** **************************************************************************
 **	typedef struct s_w
@@ -71,8 +75,6 @@ typedef struct		s_w
 
 	pthread_mutex_t lock_x;
 	t_map			map;
-	t_cross			hor_point;
-	t_cross			vert_point;
 	int				player_x;
 	int 			player_y;
 	int				player_speed;
@@ -90,6 +92,7 @@ typedef struct		s_w
 	void			*mlx_p;
 	void			*win_p;
 	void			*img_p;
+	d_win			*datas_win;	
 	//////////////////////////
 	double		cameraX; //x-coordinate in camera space
 	double 		rayDirX;
@@ -108,28 +111,31 @@ typedef struct		s_w
 	int		lineHeight;//Calculate height of line to draw on screen
 	int		drawStart;//calculate lowest and highest pixel to fill in current stripe
 	int		drawEnd;
-	SDL_PixelFormat *pix;
+	double	floorxwall;//x position of the floor at the bottom of the wall
+    double	floorywall;//y position of the floor at the bottom of the wall
+    int		floortexx;
+    int		floortexy;
+	double	wallx;//where exactly the wall was hit
+	int		texx;//x coordinate on the texture
+	double	distwall;
+	double	distplayer;
+	double	currentdist;
+	double	floorweight;
+    double	currentfloorx;
+    double	currentfloory;
 
+	SDL_PixelFormat *pix;
 }					t_w;
-typedef struct data_win
-{
-SDL_Window		*sdl_win;
-SDL_Surface		*surf;
-SDL_Renderer	*render;
-SDL_Texture* 	texture;
-int 			fullscreen;
-SDL_PixelFormat *pix;
-}		d_win;
 
 typedef struct data_moves
 {
-int **wmap;
-double posX;
-double posY;
-double planeX;
-double planeY;
-double dirX;
-double dirY;
+	int **wmap;
+	double posX;
+	double posY;
+	double planeX;
+	double planeY;
+	double dirX;
+	double dirY;
 
 }	d_moves;
 
@@ -182,7 +188,7 @@ void		config_win(struct data_win *dw);
 ** --------------draw.c--------------
 */
 color_rgb	color_get(int r, int g, int b, int a);
-int			verLine(int x, t_w *c, struct ColorRGBA color, SDL_Surface	*surf);//draw vertical lines
+int			verLine(int x, t_w *c, color_rgb color, d_win *dw);//draw vertical lines
 void		redraw(d_win *w);//update, redraw
 void		cls(d_win *w);//clear, NOT WORKING, need to check how to correct clear window
 

@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/03 19:25:59 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/06 14:03:25 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			ft_ui(SDL_Event	*e, d_moves *m, t_w *w)
 	{
 		printf("esc\n");
 		e->type = SDL_QUIT;
-		return(-1);
+		return (0);
 	}
 	if ((e->key.keysym.sym == SDLK_UP) || (e->key.keysym.sym == SDLK_w))
 	{

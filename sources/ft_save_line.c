@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/02 18:17:35 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/03 19:39:39 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int				ft_save_line(char *line, int *ptr, int size)
 			if (line[i] == 'w')
 				ptr[i + 1] = 2;
 			else if (line[i] == 'p')
-				ptr[i + 1] = 1;
+				ptr[i + 1] = 0;
 			else if (line[i] == '1')
 				ptr[i + 1] = 0;
 		}
