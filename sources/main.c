@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/03 16:12:37 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/07 19:46:03 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 /*
 ** **************************************************************************
-**	static void ft_read(char *source_f)
-**	Function to get user map
+**	static void ft_read(int fd, t_w *w)
+**	Function to get read user map
 ** **************************************************************************
 */
 
-static void					ft_read(int fd, t_w *w)
+static void			ft_read(int fd, t_w *w)
 {
-	int		res;
-	int		i;
+	int	res;
+	int	i;
 
 	w->map.size = 0;
 	w->map.pl = 0;
@@ -35,7 +35,6 @@ static void					ft_read(int fd, t_w *w)
 		ft_putstr_fd("Map error.\n", 2);
 		exit(1);
 	}
-	
 }
 
 /*
@@ -45,7 +44,7 @@ static void					ft_read(int fd, t_w *w)
 ** **************************************************************************
 */
 
-static int					ft_open(char *source_f)
+static int			ft_open(char *source_f)
 {
 	int	fd;
 
@@ -57,22 +56,18 @@ static int					ft_open(char *source_f)
 	return (fd);
 }
 
-
 /*
 ** **************************************************************************
 **	int main(int argc, char **argv)
-**	Function to get user map
+**	Function to get program arguments
 ** **************************************************************************
 */
 
 int					main(int argc, char **argv)
 {
-	clock_t			t;
-	double			time_taken;
-	t_w				new_w;
-	int				fd;
+	t_w	new_w;
+	int	fd;
 
-	t = clock();
 	if ((argc != 2) || (argv[1] == NULL))
 	{
 		ft_putstr_fd("Usage: sh ./run.sh\n", 2);
@@ -80,11 +75,6 @@ int					main(int argc, char **argv)
 	}
 	fd = ft_open(argv[1]);
 	ft_read(fd, &new_w);
-	ft_show_map(&new_w.map);
 	ft_engine(&new_w);
-	//ft_sdl_run(&new_w);
-	t = clock() - t;
-	time_taken = (double)t / CLOCKS_PER_SEC;
-	printf("\ntime_taken = %f\n", time_taken);
 	exit(0);
 }

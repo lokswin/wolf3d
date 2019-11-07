@@ -10,6 +10,7 @@ void config_moves(d_moves *m, t_w *w)
     m->dirY = 0;
     m->planeX = 0;
     m->planeY = 0.66;
+	m->mv_speed = 0.064;
 }
 
 void config_win(struct data_win *dw)

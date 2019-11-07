@@ -6,41 +6,11 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/03 19:39:39 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/07 19:47:14 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
-
-/*
-** **************************************************************************
-**	void ft_show_map(int len, char *line)
-**	Function to print user map
-** **************************************************************************
-*/
-
-void			ft_show_map(t_map *map)
-{
-	int			i;
-	int			j;
-
-	i = 0;
-	j = 0;
-	printf("\n\tPRINT MAP  map_size=%d\n", map->size);
-	while(i < map->size)
-	{
-		j = 0;
-		printf("map[%d]	|", i);
-		while(j < map->size)
-		{
-			printf("%d|", map->dig_map[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-	printf("\n\tmap printed\n");
-}
 
 /*
 ** **************************************************************************
@@ -49,7 +19,7 @@ void			ft_show_map(t_map *map)
 ** **************************************************************************
 */
 
-void				ft_put_map_man()
+void			ft_put_map_man(void)
 {
 	ft_putstr("usage ./wolf3d ./maps/map.wolf3d:\n\
 	\n\tMap width - [4-50]\n\
@@ -63,7 +33,7 @@ void				ft_put_map_man()
 
 /*
 ** **************************************************************************
-**	static void ft_init_wall(char *line, t_map map)
+**	static void ft_init_wall(int *ptr, int size)
 **	Function to place walls everywhere
 ** **************************************************************************
 */
@@ -73,7 +43,7 @@ static void		ft_init_wall(int *ptr, int size)
 	int			i;
 
 	i = 0;
-	while(i < size+1)
+	while (i < (size + 1))
 	{
 		ptr[i] = 2;
 		i++;
@@ -82,7 +52,7 @@ static void		ft_init_wall(int *ptr, int size)
 
 /*
 ** **************************************************************************
-**	static void ft_map_save(char *line, t_map map)
+**	int ft_save_line(char *line, int *ptr, int size)
 **	Function to save one line
 ** **************************************************************************
 */
@@ -92,10 +62,8 @@ int				ft_save_line(char *line, int *ptr, int size)
 	int			i;
 
 	i = -1;
-	//ft_putstr("\nstartsave_line\n");
 	ft_init_wall(ptr, size);
 	while (++i < size)
-	{
 		if (!line)
 			ptr[i] = 2;
 		else
@@ -109,8 +77,5 @@ int				ft_save_line(char *line, int *ptr, int size)
 			else if (line[i] == '1')
 				ptr[i + 1] = 0;
 		}
-	}
-	
 	return (1);
-	//ft_putstr("\nstartsave_line\n");
 }

@@ -1,1 +1,1 @@
-gcc -Wall -Werror -Wextra main.c main_w.c sources/ft_ui.c sources/config.c sources/draw.c sources/screen.c sources/ft_save_line.c sources/ft_map.c -I include/ -L lib -l SDL2-2.0.0 -I libft/ -L libft/ -lft -I include/ -L lib -l sdl2_image
+gcc -Wall -Werror -Wextra sources/main.c sources/ft_engine.c sources/ft_ui.c sources/ft_config.c sources/ft_draw.c sources/ft_screen.c sources/ft_save_line.c sources/ft_map.c -I include/ -L lib -l SDL2-2.0.0 -I libft/ -L libft/ -lft -I include/ -L lib -l sdl2_image

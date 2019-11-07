@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/06 21:23:59 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/07 20:50:00 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,18 +111,6 @@ typedef struct		s_w
 	int		lineHeight;//Calculate height of line to draw on screen
 	int		drawStart;//calculate lowest and highest pixel to fill in current stripe
 	int		drawEnd;
-	double	floorxwall;//x position of the floor at the bottom of the wall
-    double	floorywall;//y position of the floor at the bottom of the wall
-    int		floortexx;
-    int		floortexy;
-	double	wallx;//where exactly the wall was hit
-	int		texx;//x coordinate on the texture
-	double	distwall;
-	double	distplayer;
-	double	currentdist;
-	double	floorweight;
-    double	currentfloorx;
-    double	currentfloory;
 
 	SDL_PixelFormat *pix;
 }					t_w;
@@ -136,6 +124,7 @@ typedef struct data_moves
 	double planeY;
 	double dirX;
 	double dirY;
+	double	mv_speed;
 
 }	d_moves;
 
@@ -165,41 +154,31 @@ void				ft_draw(t_w *w);
 
 void			ft_sdl_hook();
 
-
 /*
 ** --------------ft_ui.c--------------
 */
 
 int			ft_ui(SDL_Event	*e, d_moves *m, t_w *w);
 /*
-** --------------screen.c--------------
+** --------------ft_screen.c--------------
 */
 
-void		screen(struct data_win *dw);
+void		ft_screen(struct data_win *dw);
 
 /*
-** -------------config.c--------------
+** -------------ft_config.c--------------
 */
 void		config_moves(d_moves *m, t_w *w);
 void		config_win(struct data_win *dw);
 
 
 /*
-** --------------draw.c--------------
+** --------------ft_draw.c--------------
 */
 color_rgb	color_get(int r, int g, int b, int a);
-int			verLine(int x, t_w *c, color_rgb color, d_win *dw);//draw vertical lines
-void		redraw(d_win *w);//update, redraw
-void		cls(d_win *w);//clear, NOT WORKING, need to check how to correct clear window
-
-
+int			ft_vert_ln(int x, t_w *c, color_rgb color, d_win *dw);
+void		ft_redraw(d_win *w);
 
 int			ft_engine(t_w *w);
 
-/*
-include path
-//${workspaceFolder}*{*}
-///Users/drafe/.brew/Cellar/glfw/3.3/include/GLFW*{*}
-///Users/drafe/.brew/Cellar/cglm/0.6.0/include{*}
-*/
 #endif

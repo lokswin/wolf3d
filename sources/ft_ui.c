@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/06 14:03:25 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/07 20:43:33 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,63 +15,67 @@
 /*
 ** **************************************************************************
 **	int ft_ui(t_w *w, SDL_Event	*e)
-**	Function to handle user input
+**	Second function to handle user input
 ** **************************************************************************
 */
 
-int			ft_ui(SDL_Event	*e, d_moves *m, t_w *w)
+static void		ft_ui_exp(SDL_Event *e, d_moves *m, double r_speed)
 {
-	double moveSpeed = 0.064;//frameTime * 5.0; //the constant value is in squares/second
-	double rotSpeed = 0.05; //the constant value is in radians/second
+	double old_dir_x;
+	double old_pl_x;
 
-	if (e->key.keysym.sym == SDLK_ESCAPE)
-	{
-		printf("esc\n");
-		e->type = SDL_QUIT;
-		return (0);
-	}
-	if ((e->key.keysym.sym == SDLK_UP) || (e->key.keysym.sym == SDLK_w))
-	{
-		printf("move up\n");
-		if(w->map.dig_map[(int)(m->posX + m->dirX * moveSpeed)][(int)(m->posY)] == 0) m->posX += m->dirX * moveSpeed;
-		if(w->map.dig_map[(int)(m->posX)][(int)(m->posY + m->dirY * moveSpeed)] == 0) m->posY += m->dirY * moveSpeed;
-	}
-	if ((e->key.keysym.sym == SDLK_DOWN) || (e->key.keysym.sym == SDLK_s))
-	{
-		printf("move down\n");
-		if(w->map.dig_map[(int)(m->posX - m->dirX * moveSpeed)][(int)(m->posY)] == 0) m->posX -= m->dirX * moveSpeed;
-		if(w->map.dig_map[(int)(m->posX)][(int)(m->posY - m->dirY * moveSpeed)] == 0) m->posY -= m->dirY * moveSpeed;
-	}
-	if ((e->key.keysym.sym == SDLK_RIGHT) || (e->key.keysym.sym == SDLK_d))//NOT WORKING, need to check formula
+	old_dir_x = m->dirX;
+	old_pl_x = m->planeX;
+	if ((e->key.keysym.sym == SDLK_RIGHT) || (e->key.keysym.sym == SDLK_d))
 	{
 		printf("move right\n");
-		double oldDirX = m->dirX;
-		m->dirX = m->dirX * cos(-rotSpeed) + m->dirY * sin(rotSpeed);
-		m->dirY = oldDirX * sin(-rotSpeed) + m->dirY * cos(rotSpeed);
-		double oldPlaneX = m->planeX;
-		m->planeX = m->planeX * cos(-rotSpeed) + m->planeY * sin(rotSpeed);
-		m->planeY = oldPlaneX * sin(-rotSpeed) + m->planeY * cos(rotSpeed);
-		/*double oldDirX = m->dirX;
-		m->dirX = m->dirX * cos(rotSpeed) - m->dirY * sin(-rotSpeed);
-		m->dirY = oldDirX * sin(rotSpeed) + m->dirY * cos(-rotSpeed);
-		double oldPlaneX = m->planeX;
-		m->planeX = m->planeX * cos(rotSpeed) - m->planeY * sin(-rotSpeed);
-		m->planeY = oldPlaneX * sin(rotSpeed) + m->planeY * cos(-rotSpeed);*/
+		m->dirX = m->dirX * cos(-r_speed) + m->dirY * sin(r_speed);
+		m->dirY = old_dir_x * sin(-r_speed) + m->dirY * cos(r_speed);
+		m->planeX = m->planeX * cos(-r_speed) + m->planeY * sin(r_speed);
+		m->planeY = old_pl_x * sin(-r_speed) + m->planeY * cos(r_speed);
 	}
 	if ((e->key.keysym.sym == SDLK_LEFT) || (e->key.keysym.sym == SDLK_a))
 	{
 		printf("move left\n");
-		double oldDirX = m->dirX;
-		m->dirX = m->dirX * cos(rotSpeed) - m->dirY * sin(rotSpeed);
-		m->dirY = oldDirX * sin(rotSpeed) + m->dirY * cos(rotSpeed);
-		double oldPlaneX = m->planeX;
-		m->planeX = m->planeX * cos(rotSpeed) - m->planeY * sin(rotSpeed);
-		m->planeY = oldPlaneX * sin(rotSpeed) + m->planeY * cos(rotSpeed);
+		m->dirX = m->dirX * cos(r_speed) - m->dirY * sin(r_speed);
+		m->dirY = old_dir_x * sin(r_speed) + m->dirY * cos(r_speed);
+		m->planeX = m->planeX * cos(r_speed) - m->planeY * sin(r_speed);
+		m->planeY = old_pl_x * sin(r_speed) + m->planeY * cos(r_speed);
 	}
-	if (e->key.keysym.sym == SDLK_r)//return
+}
+
+/*
+** **************************************************************************
+**	int ft_ui(t_w *w, SDL_Event	*e)
+**	First function to handle user input
+** **************************************************************************
+*/
+
+int				ft_ui(SDL_Event *e, d_moves *m, t_w *w)
+{
+	double	r_speed;
+
+	r_speed = 0.05;
+	if (e->key.keysym.sym == SDLK_ESCAPE)
+		return (0);
+	if ((e->key.keysym.sym == SDLK_UP) || (e->key.keysym.sym == SDLK_w))
 	{
-		printf("return\n");
-		config_moves(m, w);
+		if (w->map.dig_map[(int)(m->posX + m->dirX * m->mv_speed)]\
+		[(int)(m->posY)] == 0)
+			m->posX += m->dirX * m->mv_speed;
+		if (w->map.dig_map[(int)(m->posX)]\
+		[(int)(m->posY + m->dirY * m->mv_speed)] == 0)
+			m->posY += m->dirY * m->mv_speed;
 	}
-	return(1);	
+	if ((e->key.keysym.sym == SDLK_DOWN) || (e->key.keysym.sym == SDLK_s))
+	{
+		if (w->map.dig_map[(int)(m->posX - m->dirX * m->mv_speed)]\
+		[(int)(m->posY)] == 0)
+			m->posX -= m->dirX * m->mv_speed;
+		if (w->map.dig_map[(int)(m->posX)]\
+		[(int)(m->posY - m->dirY * m->mv_speed)] == 0)
+			m->posY -= m->dirY * m->mv_speed;
+	}
+	ft_ui_exp(e, m, r_speed);
+	return (1);
 }
