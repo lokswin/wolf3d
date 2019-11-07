@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/07 20:05:30 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:59:38 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,10 @@ int			ft_map_chk(int fd, t_w *w)
 		if ((gnl_res = ft_get_next_line(fd, &line)) == -1)
 			ft_putstr_fd("GNL error. ", 2);
 		if ((gnl_res == 0) || (gnl_res == -1))
+		{
+			ft_strdel(&line);
 			break ;
+		}
 		if (!ft_map_chk_exp(ft_strlen(line), file_h, line, &w->map))
 			return (0);
 		ft_strcpy(arr[file_h], line);
