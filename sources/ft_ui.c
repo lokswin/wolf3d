@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/07 20:43:33 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:25:04 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void		ft_ui_exp(SDL_Event *e, d_moves *m, double r_speed)
 	old_pl_x = m->planeX;
 	if ((e->key.keysym.sym == SDLK_RIGHT) || (e->key.keysym.sym == SDLK_d))
 	{
-		printf("move right\n");
 		m->dirX = m->dirX * cos(-r_speed) + m->dirY * sin(r_speed);
 		m->dirY = old_dir_x * sin(-r_speed) + m->dirY * cos(r_speed);
 		m->planeX = m->planeX * cos(-r_speed) + m->planeY * sin(r_speed);
@@ -36,7 +35,6 @@ static void		ft_ui_exp(SDL_Event *e, d_moves *m, double r_speed)
 	}
 	if ((e->key.keysym.sym == SDLK_LEFT) || (e->key.keysym.sym == SDLK_a))
 	{
-		printf("move left\n");
 		m->dirX = m->dirX * cos(r_speed) - m->dirY * sin(r_speed);
 		m->dirY = old_dir_x * sin(r_speed) + m->dirY * cos(r_speed);
 		m->planeX = m->planeX * cos(r_speed) - m->planeY * sin(r_speed);

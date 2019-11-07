@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/07 20:50:00 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:28:59 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,8 +168,7 @@ void		ft_screen(struct data_win *dw);
 /*
 ** -------------ft_config.c--------------
 */
-void		config_moves(d_moves *m, t_w *w);
-void		config_win(struct data_win *dw);
+void		ft_config_moves(d_moves *m, t_w *w);
 
 
 /*

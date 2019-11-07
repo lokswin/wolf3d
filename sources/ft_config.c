@@ -1,19 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_config.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/07 21:27:46 by drafe             #+#    #+#             */
+/*   Updated: 2019/11/07 21:29:52 by drafe            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "wolf3d.h"
 
-void config_moves(d_moves *m, t_w *w)
+void	ft_config_moves(d_moves *m, t_w *w)
 {
-    /*m->posX = 6;
-    m->posY = 3;*/
-    m->posX = w->map.p_x + 1.8;//start position
-    m->posY = w->map.p_y + 1.8;
-    m->dirX = -1;//initial direction
-    m->dirY = 0;
-    m->planeX = 0;
-    m->planeY = 0.66;
+	m->posX = w->map.p_x + 1.8;
+	m->posY = w->map.p_y + 1.8;
+	m->dirX = -1;
+	m->dirY = 0;
+	m->planeX = 0;
+	m->planeY = 0.66;
 	m->mv_speed = 0.064;
-}
-
-void config_win(struct data_win *dw)
-{
-    dw += 0;
 }

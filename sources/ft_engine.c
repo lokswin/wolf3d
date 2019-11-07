@@ -29,8 +29,7 @@ int ft_engine(t_w *w)
     SDL_Surface *tmp;
     color_rgb   color;
 	SDL_Event	e;
-	config_moves(&m, w);
-	config_win(&dw);
+	ft_config_moves(&m, w);
     ft_screen(&dw);
 	while(1)
     {
@@ -123,7 +122,7 @@ int ft_engine(t_w *w)
             ft_vert_ln(x, &c, color, &dw);
     	}
 		w->datas_win = &dw;
-		printf("m.posX=%f m.posy=%f\n", m.posX, m.posY);
+		//printf("m.posX=%f m.posy=%f\n", m.posX, m.posY);
 		ft_redraw(&dw);
 	}
     return (1);

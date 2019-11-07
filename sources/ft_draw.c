@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 20:37:35 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/07 20:43:14 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:27:14 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,11 @@ int			ft_vert_ln(int x, t_w *c, color_rgb color, d_win *dw)
 		c->drawEnd = H_WIN - 1;
 	colorsdl = SDL_MapRGBA(dw->pix, color.r, color.g, color.b, color.a);
 	bufp = (int*)dw->surf->pixels + c->drawStart * dw->surf->pitch / 4 + x;
-	y = c->drawStart;
-	while (y <= c->drawEnd)
+	y = c->drawStart - 1;
+	while (++y <= c->drawEnd)
 	{
 		*bufp = colorsdl;
 		bufp += dw->surf->pitch / 4;
-		y++;
 	}
 	return (1);
 }
