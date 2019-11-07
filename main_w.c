@@ -38,11 +38,11 @@ int ft_engine(t_w *w)
 	config_win(&dw);
 	SDL_Event e;
     screen(&dw);//esta funcion la remplazamos creando una ventana
-	if(!(textr = IMG_LoadTexture(dw.render, "wall/WALL0.bmp")))
-		ft_putstr_fd("err_img_load", 2);
-	if (SDL_RenderCopy(dw.render, textr, NULL, NULL))
-		ft_sdl_error(w);
-	SDL_RenderPresent(dw.render);
+	//if(!(textr = IMG_LoadTexture(dw.render, "wall/WALL0.bmp")))
+	//	ft_putstr_fd("err_img_load", 2);
+	//if (SDL_RenderCopy(dw.render, textr, NULL, NULL))
+	//	ft_sdl_error(w);
+	//SDL_RenderPresent(dw.render);
 	while(1)
     {
         if (SDL_PollEvent(&e))
@@ -187,6 +187,7 @@ int ft_engine(t_w *w)
 		//for(int x = 0; x < W_WIN; x++) for(int y = 0; y < H_WIN; y++)
 	  	//	buffer[y][x] = 0;
 		w->datas_win = &dw;
+		printf("m.posX=%f m.posy=%f\n", m.posX, m.posY);
 		redraw(&dw);
     }
     return (1);

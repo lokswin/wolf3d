@@ -11,9 +11,8 @@ void redraw(d_win *w)
 
 int	verLine(int x, t_w *c, color_rgb color, d_win *dw)//Fast vertical line from (x,y1) to (x,y2), with rgb color
 {
-	int w = W_WIN;
-	int h = H_WIN;
-    int * bufp;
+	int		colorsdl;
+    int 	*bufp;
 
 	if (c->drawEnd < c->drawStart)
 	{
@@ -21,19 +20,19 @@ int	verLine(int x, t_w *c, color_rgb color, d_win *dw)//Fast vertical line from 
         c->drawEnd = c->drawStart - c->drawEnd;;
         c->drawStart -= c->drawEnd;;
 	} //swap y1 and c->drawEnd;
-	if (c->drawEnd < 0 || c->drawStart >= h || x < 0 || x >= w)
+	if (c->drawEnd < 0 || c->drawStart >= H_WIN || x < 0 || x >= W_WIN)
 	    return 0; //no single point of the line is on screen
 	if (c->drawStart < 0)
 	    c->drawStart = 0; //clip
-	if (c->drawEnd >= w)
-	    c->drawEnd = h - 1; //clip
+	if (c->drawEnd >= W_WIN)
+	    c->drawEnd = H_WIN - 1; //clip
 
-	int colorSDL = SDL_MapRGBA(dw->pix, color.r, color.g, color.b, color.a);
+	colorsdl = SDL_MapRGBA(dw->pix, color.r, color.g, color.b, color.a);
 
 	bufp = (int*)dw->surf->pixels + c->drawStart * dw->surf->pitch / 4 + x;
 	for (int y = c->drawStart; y <= c->drawEnd; y++)
 	{
-		*bufp = colorSDL;
+		*bufp = colorsdl;
 		bufp += dw->surf->pitch / 4;
 	}
 	return 1;
