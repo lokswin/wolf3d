@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/07 19:47:14 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/08 19:28:01 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@
 
 void			ft_put_map_man(void)
 {
-	ft_putstr("usage ./wolf3d ./maps/map.wolf3d:\n\
+	ft_putstr("usage ./wolf3d path_to_map\n\
 	\n\tMap width - [4-50]\n\
 	Map height - [4-50]\n\
 	w - wall block\n\
 	o1 - objects[1-4]\n\
 	1 - empty blocks with floor and ceiling[1-4]\n\
-	p - player\n\
-	\n");
+	p - player\n");
 }
 
 /*

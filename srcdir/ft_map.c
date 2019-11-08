@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/07 21:59:38 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/08 19:15:27 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_save(char arr[MAX_MAP_H + 3][MAX_MAP_W + 3], t_map *map)
 		{
 			if (!(map->dig_map[i] = (int*)malloc(sizeof(int) * map->size)))
 			{
-				ft_putstr_fd("map malloc error #2", 2);
+				ft_putstr_fd("map malloc error #2\n", 2);
 				return (0);
 			}
 			ft_save_line(arr[i - 1], map->dig_map[i], map->size);
@@ -39,7 +39,7 @@ static int	ft_save(char arr[MAX_MAP_H + 3][MAX_MAP_W + 3], t_map *map)
 			if (!(map->dig_map = (int**)malloc(sizeof(int*) * map->size)) || \
 			!(map->dig_map[i] = (int*)malloc(sizeof(int) * map->size)))
 			{
-				ft_putstr_fd("map malloc error #1", 2);
+				ft_putstr_fd("map malloc error #1\n", 2);
 				return (0);
 			}
 			ft_save_line(NULL, map->dig_map[0], map->size);
@@ -95,7 +95,7 @@ int			ft_map_chk(int fd, t_w *w)
 	while (file_h++ < MAX_MAP_H + 1)
 	{
 		if ((gnl_res = ft_get_next_line(fd, &line)) == -1)
-			ft_putstr_fd("GNL error. ", 2);
+			ft_putstr_fd("GNL error.\n", 2);
 		if ((gnl_res == 0) || (gnl_res == -1))
 		{
 			ft_strdel(&line);

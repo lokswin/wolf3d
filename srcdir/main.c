@@ -6,7 +6,7 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:32:09 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/07 19:46:03 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/08 19:27:07 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void			ft_read(int fd, t_w *w)
 	if (!res)
 	{
 		ft_put_map_man();
-		ft_putstr_fd("Map error.\n", 2);
+		ft_putstr_fd("map error. usage: ./wolf3d path_to_map\n", 2);
 		exit(1);
 	}
 }
@@ -50,7 +50,7 @@ static int			ft_open(char *source_f)
 
 	if ((fd = open(source_f, O_RDONLY)) < 0)
 	{
-		ft_putstr_fd("Open error. Usage: sh ./run.sh\n", 2);
+		ft_putstr_fd("open error. usage: ./wolf3d path_to_map\n", 2);
 		exit(1);
 	}
 	return (fd);
@@ -70,7 +70,7 @@ int					main(int argc, char **argv)
 
 	if ((argc != 2) || (argv[1] == NULL))
 	{
-		ft_putstr_fd("Usage: sh ./run.sh\n", 2);
+		ft_putstr_fd("usage: ./wolf3d path_to_map\n", 2);
 		exit(1);
 	}
 	fd = ft_open(argv[1]);
