@@ -6,20 +6,19 @@
 /*   By: drafe <drafe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/01 17:45:14 by drafe             #+#    #+#             */
-/*   Updated: 2019/11/07 21:28:59 by drafe            ###   ########.fr       */
+/*   Updated: 2019/11/08 18:13:07 by drafe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WOLF3D_H
 # define WOLF3D_H
-# include "libft.h"
+# include "libft/libft.h"
 # include "keys.h"
 # include "constants.h"
 
 # include <SDL2/SDL.h>
 # include <SDL2/SDL_image.h>
 # include <math.h>
-# include <pthread.h>
 # include <fcntl.h>
 # include <stdio.h>//printf remove before push
 # include <time.h>//time remove before push
